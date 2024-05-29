@@ -1,0 +1,1246 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1798368391070894}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1798368391070894
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4256909224041062}
+  - 111: {fileID: 111279478382937858}
+  - 114: {fileID: 114736772063795866}
+  m_Layer: 0
+  m_Name: Weapon427_Inner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4256909224041062
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798368391070894}
+  m_LocalRotation: {x: 6.657903E-08, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4778592705423625}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!111 &111279478382937858
+Animation:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798368391070894}
+  m_Enabled: 1
+  m_Animation: {fileID: 7400000, guid: 78899740f944d3f46932f3d6149eda94, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 78899740f944d3f46932f3d6149eda94, type: 2}
+  - {fileID: 7400000, guid: 05d6bdc7236b18244908939eeef1d0db, type: 2}
+  - {fileID: 7400000, guid: c23b5a6074a89aa49bfc6a7ecd016d90, type: 2}
+  - {fileID: 7400000, guid: a9b8f47f7fed440439d644be6f33190f, type: 2}
+  - {fileID: 7400000, guid: f62926eb55a3dfb4597e461516c8814a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 1
+--- !u!114 &114736772063795866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798368391070894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6637cef7152cf5c8dd5ffd3de56c35, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  particlePoint: {fileID: 0}
+  LeftArmorHand: {fileID: 4456138999067759}
+  RightArmorHand: {fileID: 4840348569336173}
+  grenatePoint: {fileID: 0}
+  shoot: {fileID: 8300000, guid: 897449d7e9538bf4280f5b7ab4a0dfc1, type: 3}
+  reload: {fileID: 8300000, guid: 6ab65b965bad93f40bf203bc41b3b04f, type: 3}
+  empty: {fileID: 8300000, guid: ca42b03a5edeb7343991193675d3eadf, type: 3}
+  bonusPrefab: {fileID: 1998787802474783}
+  animationObject: {fileID: 1798368391070894}
+  preview: {fileID: 0}
+  aimTextureV: {fileID: 2800000, guid: 00337e94bfc72f244ab98189930afa1e, type: 3}
+  aimTextureH: {fileID: 2800000, guid: 03d862d5e1b5eee498113ae9084563d7, type: 3}
+--- !u!1 &1874186027253726
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4778592705423625}
+  m_Layer: 0
+  m_Name: PoisonPlush 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4778592705423625
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1874186027253726}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.0019560242, y: 1.2090503, z: 0.4144323}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4772644855599906}
+  - {fileID: 4591408681195226}
+  - {fileID: 4233355319488105}
+  m_Father: {fileID: 4256909224041062}
+  m_RootOrder: 0
+--- !u!1 &1715373635111823
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4772644855599906}
+  - 137: {fileID: 137919088318169675}
+  m_Layer: 0
+  m_Name: Arms_Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4772644855599906
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715373635111823}
+  m_LocalRotation: {x: 0.24819644, y: 0.2645169, z: -0.7426092, w: 0.5629929}
+  m_LocalPosition: {x: 0.2513735, y: 0.41443175, z: 0.16594931}
+  m_LocalScale: {x: 0.99999976, y: 0.99999994, z: 0.99999994}
+  m_Children:
+  - {fileID: 4261047757387788}
+  m_Father: {fileID: 4778592705423625}
+  m_RootOrder: 0
+--- !u!137 &137919088318169675
+SkinnedMeshRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715373635111823}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: bab098c0c16efa24b8128bdf3ac626e0, type: 2}
+  m_SubsetIndices: []
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_Mesh: {fileID: 4300000, guid: dc5b6651f089809498a481deeb15f3a2, type: 2}
+  m_Bones:
+  - {fileID: 4233355319488105}
+  - {fileID: 4591408681195226}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 4591408681195226}
+  m_AABB:
+    m_Center: {x: 0.12397285, y: 0.3590124, z: -0.16831625}
+    m_Extent: {x: 0.51904505, y: 0.6104326, z: 0.473863}
+  m_DirtyAABB: 0
+--- !u!1 &1998787802474783
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4261047757387788}
+  - 137: {fileID: 137761623813849007}
+  m_Layer: 0
+  m_Name: PoisonPlush_mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4261047757387788
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998787802474783}
+  m_LocalRotation: {x: -0.24819642, y: -0.26451707, z: 0.7426092, w: 0.56299275}
+  m_LocalPosition: {x: 0.510593, y: 0.31028095, z: 0.7329183}
+  m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 4772644855599906}
+  m_RootOrder: 0
+--- !u!137 &137761623813849007
+SkinnedMeshRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998787802474783}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7ef77141d394ab44c8c1e02c316810c4, type: 2}
+  m_SubsetIndices: []
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_Mesh: {fileID: 4300000, guid: 94e80212a2a5d5d44ab11b8b269c2072, type: 2}
+  m_Bones:
+  - {fileID: 4954358234274221}
+  - {fileID: 4490554476647092}
+  - {fileID: 4533777751975298}
+  - {fileID: 4868700244052972}
+  - {fileID: 4497928712716116}
+  - {fileID: 4698538114721228}
+  - {fileID: 4848524150990736}
+  - {fileID: 4537015997929027}
+  - {fileID: 4163840693962924}
+  - {fileID: 4779806717416423}
+  - {fileID: 4902512928132804}
+  - {fileID: 4008244386393535}
+  - {fileID: 4882557001127153}
+  - {fileID: 4866790767088424}
+  - {fileID: 4318502544091070}
+  - {fileID: 4193199236684809}
+  - {fileID: 4779360964173192}
+  - {fileID: 4228315917674255}
+  - {fileID: 4651015551049711}
+  - {fileID: 4783850640150504}
+  - {fileID: 4842754949405449}
+  - {fileID: 4377059292683811}
+  - {fileID: 4214780913578864}
+  - {fileID: 4871097675916225}
+  - {fileID: 4616761145231298}
+  - {fileID: 4886389713513090}
+  - {fileID: 4630927150289074}
+  - {fileID: 4265437738093462}
+  - {fileID: 4188037254484622}
+  - {fileID: 4522607596196345}
+  - {fileID: 4878002161775328}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 4377059292683811}
+  m_AABB:
+    m_Center: {x: 0.0045588315, y: -0.07454458, z: 0.061053067}
+    m_Extent: {x: 0.70671344, y: 0.8390095, z: 0.6358354}
+  m_DirtyAABB: 0
+--- !u!1 &1284860990308021
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4591408681195226}
+  m_Layer: 0
+  m_Name: FPS_PLAYER_Arm_left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4591408681195226
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1284860990308021}
+  m_LocalRotation: {x: -6.743496E-07, y: 7.361667E-07, z: -0.70710677, w: 0.7071069}
+  m_LocalPosition: {x: -0.251956, y: 0.41443178, z: 0.16594931}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 4456138999067759}
+  m_Father: {fileID: 4778592705423625}
+  m_RootOrder: 1
+--- !u!1 &1323329793709792
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4456138999067759}
+  m_Layer: 0
+  m_Name: Point_Arm_Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4456138999067759
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323329793709792}
+  m_LocalRotation: {x: 0.50000006, y: 0.49999988, z: 0.49999994, w: 0.5000001}
+  m_LocalPosition: {x: -0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4591408681195226}
+  m_RootOrder: 0
+--- !u!1 &1100509594384621
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4233355319488105}
+  m_Layer: 0
+  m_Name: FPS_PLAYER_Arm_right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4233355319488105
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100509594384621}
+  m_LocalRotation: {x: -6.498791E-07, y: 9.849417E-08, z: -0.722364, w: 0.69151306}
+  m_LocalPosition: {x: 0.24804398, y: 0.41443175, z: 0.16594931}
+  m_LocalScale: {x: 0.9999998, y: 0.99999994, z: 0.99999994}
+  m_Children:
+  - {fileID: 4377059292683811}
+  - {fileID: 4840348569336173}
+  m_Father: {fileID: 4778592705423625}
+  m_RootOrder: 2
+--- !u!1 &1418845399769764
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4377059292683811}
+  m_Layer: 0
+  m_Name: Poison_RootBone01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4377059292683811
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418845399769764}
+  m_LocalRotation: {x: 0.015426021, y: -0.7069383, z: 0.7069387, w: -0.015425276}
+  m_LocalPosition: {x: 0.5101524, y: -0.006356487, z: 0.003693695}
+  m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+  m_Children:
+  - {fileID: 4188037254484622}
+  - {fileID: 4842754949405449}
+  - {fileID: 4871097675916225}
+  m_Father: {fileID: 4233355319488105}
+  m_RootOrder: 0
+--- !u!1 &1591158827004317
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4188037254484622}
+  m_Layer: 0
+  m_Name: Poison_LeafBone01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4188037254484622
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1591158827004317}
+  m_LocalRotation: {x: 0.5, y: 0.49999997, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -0.036631964, y: -0.00018737793, z: 0.045266245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4377059292683811}
+  m_RootOrder: 0
+--- !u!1 &1354298815682646
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4842754949405449}
+  m_Layer: 0
+  m_Name: Poison_NeckBone01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4842754949405449
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354298815682646}
+  m_LocalRotation: {x: 0, y: 0, z: -0.25881904, w: 0.9659258}
+  m_LocalPosition: {x: -0.011219063, y: -0.18980773, z: 7.6293944E-08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4783850640150504}
+  m_Father: {fileID: 4377059292683811}
+  m_RootOrder: 1
+--- !u!1 &1754573383145691
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4783850640150504}
+  m_Layer: 0
+  m_Name: Poison_NeckBone02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4783850640150504
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754573383145691}
+  m_LocalRotation: {x: -6.779916E-14, y: -4.319283E-14, z: -0.21643962, w: 0.976296}
+  m_LocalPosition: {x: -0.01049675, y: -0.14586136, z: 3.8146972E-08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4954358234274221}
+  m_Father: {fileID: 4842754949405449}
+  m_RootOrder: 0
+--- !u!1 &1572939589184928
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4954358234274221}
+  m_Layer: 0
+  m_Name: Poison_HeadBone01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4954358234274221
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1572939589184928}
+  m_LocalRotation: {x: 0.21263112, y: 0.6743797, z: -0.2126311, w: 0.67437977}
+  m_LocalPosition: {x: -0.06659141, y: -0.13002868, z: -0.04491861}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4868700244052972}
+  - {fileID: 4008244386393535}
+  - {fileID: 4698538114721228}
+  - {fileID: 4228315917674255}
+  - {fileID: 4533777751975298}
+  - {fileID: 4490554476647092}
+  m_Father: {fileID: 4783850640150504}
+  m_RootOrder: 0
+--- !u!1 &1768273502696740
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4868700244052972}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4868700244052972
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768273502696740}
+  m_LocalRotation: {x: 8.076814E-08, y: 0.38268343, z: -3.3455258E-08, w: 0.92387956}
+  m_LocalPosition: {x: -0.08561527, y: -0.080042645, z: 0.08738189}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4497928712716116}
+  m_Father: {fileID: 4954358234274221}
+  m_RootOrder: 0
+--- !u!1 &1561606499545933
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4497928712716116}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4497928712716116
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1561606499545933}
+  m_LocalRotation: {x: 9.778407E-08, y: -3.9249276E-08, z: -0.5, w: 0.8660254}
+  m_LocalPosition: {x: -0.054761887, y: 0, z: -1.5258789E-07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4537015997929027}
+  m_Father: {fileID: 4868700244052972}
+  m_RootOrder: 0
+--- !u!1 &1381743826904891
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4537015997929027}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4537015997929027
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381743826904891}
+  m_LocalRotation: {x: 7.375699E-08, y: 5.2683564E-08, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.11130218, y: 0, z: 0.0146466065}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4163840693962924}
+  m_Father: {fileID: 4497928712716116}
+  m_RootOrder: 0
+--- !u!1 &1120228345359154
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4163840693962924}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4163840693962924
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120228345359154}
+  m_LocalRotation: {x: -1.2077535E-07, y: -1.1106858E-07, z: 0.64278764, w: 0.7660445}
+  m_LocalPosition: {x: -0.15859924, y: 1.5258789E-07, z: 4.5776366E-07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4537015997929027}
+  m_RootOrder: 0
+--- !u!1 &1417667981546567
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4008244386393535}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4008244386393535
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417667981546567}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0.04851774, y: -0.0800428, z: 0.046316832}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4882557001127153}
+  m_Father: {fileID: 4954358234274221}
+  m_RootOrder: 1
+--- !u!1 &1196236617732851
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4882557001127153}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4882557001127153
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1196236617732851}
+  m_LocalRotation: {x: -0.46174854, y: 1.3123683E-14, z: -2.5210365E-14, w: 0.8870109}
+  m_LocalPosition: {x: -7.6293944E-08, y: 0, z: 0.037177123}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4779806717416423}
+  m_Father: {fileID: 4008244386393535}
+  m_RootOrder: 0
+--- !u!1 &1642085802587402
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4779806717416423}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4779806717416423
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1642085802587402}
+  m_LocalRotation: {x: 0.6755902, y: 2.1053365E-08, z: 9.192098E-10, w: 0.7372773}
+  m_LocalPosition: {x: 0.014646835, y: 0, z: 0.11077934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4902512928132804}
+  m_Father: {fileID: 4882557001127153}
+  m_RootOrder: 0
+--- !u!1 &1130874466399710
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4902512928132804}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4902512928132804
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1130874466399710}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: 1.5258789E-07, y: 3.8146972E-08, z: 0.16042922}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4779806717416423}
+  m_RootOrder: 0
+--- !u!1 &1840444142525776
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4698538114721228}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4698538114721228
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1840444142525776}
+  m_LocalRotation: {x: 8.076814E-08, y: 0.38268343, z: -3.3455258E-08, w: 0.92387956}
+  m_LocalPosition: {x: -0.009829598, y: -0.08004272, z: -0.07615433}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4848524150990736}
+  m_Father: {fileID: 4954358234274221}
+  m_RootOrder: 2
+--- !u!1 &1432904882085179
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4848524150990736}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4848524150990736
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1432904882085179}
+  m_LocalRotation: {x: 6.608746E-08, y: 3.4402948E-08, z: 0.46174854, w: 0.8870109}
+  m_LocalPosition: {x: 0.057030182, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4866790767088424}
+  m_Father: {fileID: 4698538114721228}
+  m_RootOrder: 0
+--- !u!1 &1714258377661339
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4866790767088424}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4866790767088424
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1714258377661339}
+  m_LocalRotation: {x: 3.3534377E-08, y: -6.8180675E-08, z: -0.7933533, w: 0.6087615}
+  m_LocalPosition: {x: 0.11157882, y: 0, z: -0.0146466065}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4318502544091070}
+  m_Father: {fileID: 4848524150990736}
+  m_RootOrder: 0
+--- !u!1 &1768107355990410
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4318502544091070}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4318502544091070
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768107355990410}
+  m_LocalRotation: {x: -1.1078208E-07, y: 1.2172413E-07, z: -0.67559016, w: 0.7372774}
+  m_LocalPosition: {x: 0.15818748, y: -7.6293944E-08, z: -3.0517577E-07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4866790767088424}
+  m_RootOrder: 0
+--- !u!1 &1947072680383826
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4228315917674255}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone13
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4228315917674255
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1947072680383826}
+  m_LocalRotation: {x: 8.076814E-08, y: 0.38268343, z: -3.3455258E-08, w: 0.92387956}
+  m_LocalPosition: {x: -0.13918678, y: -0.080042645, z: -0.03423996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4651015551049711}
+  m_Father: {fileID: 4954358234274221}
+  m_RootOrder: 3
+--- !u!1 &1430063143134190
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4651015551049711}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone14
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4651015551049711
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430063143134190}
+  m_LocalRotation: {x: 0.5, y: -2.1316282E-14, z: -3.692089E-14, w: 0.86602545}
+  m_LocalPosition: {x: 7.6293944E-08, y: -7.6293944E-08, z: -0.040071182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4193199236684809}
+  m_Father: {fileID: 4228315917674255}
+  m_RootOrder: 0
+--- !u!1 &1970342803603879
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4193199236684809}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone015
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4193199236684809
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1970342803603879}
+  m_LocalRotation: {x: -0.8433913, y: 4.5611173E-09, z: -2.0573903E-08, w: 0.53729993}
+  m_LocalPosition: {x: -0.014646758, y: 0, z: -0.1117308}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4779360964173192}
+  m_Father: {fileID: 4651015551049711}
+  m_RootOrder: 0
+--- !u!1 &1739623594022629
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4779360964173192}
+  m_Layer: 0
+  m_Name: Poison_HeadLeafBone16
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4779360964173192
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739623594022629}
+  m_LocalRotation: {x: -0.6087615, y: -9.071253E-09, z: 1.1821887E-08, w: 0.7933534}
+  m_LocalPosition: {x: -1.5258789E-07, y: -1.5258789E-07, z: -0.15919563}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4193199236684809}
+  m_RootOrder: 0
+--- !u!1 &1466972150308071
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4533777751975298}
+  m_Layer: 0
+  m_Name: Poison_JawDownBone01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4533777751975298
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1466972150308071}
+  m_LocalRotation: {x: 0, y: 0, z: -4.0529104E-15, w: 1}
+  m_LocalPosition: {x: 5.7220458E-08, y: -0.09261475, z: -0.045927733}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4954358234274221}
+  m_RootOrder: 4
+--- !u!1 &1023171759613306
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4490554476647092}
+  m_Layer: 0
+  m_Name: Poison_JawUPBone01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4490554476647092
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023171759613306}
+  m_LocalRotation: {x: 0, y: 0, z: -4.0529104E-15, w: 1}
+  m_LocalPosition: {x: 7.6293944E-08, y: -0.09261475, z: 0.061318662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4954358234274221}
+  m_RootOrder: 5
+--- !u!1 &1343123120765911
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4871097675916225}
+  m_Layer: 0
+  m_Name: Poison_TailBone01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4871097675916225
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1343123120765911}
+  m_LocalRotation: {x: -0.70105743, y: -0.09229596, z: -0.09229596, w: 0.70105743}
+  m_LocalPosition: {x: -0, y: 0.15942696, z: -0.027343959}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4214780913578864}
+  - {fileID: 4616761145231298}
+  m_Father: {fileID: 4377059292683811}
+  m_RootOrder: 2
+--- !u!1 &1783618559967978
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4214780913578864}
+  m_Layer: 0
+  m_Name: Poison_LeafBone02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4214780913578864
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1783618559967978}
+  m_LocalRotation: {x: 0.7071068, y: -0.70710677, z: 5.338505E-08, w: -5.3385136E-08}
+  m_LocalPosition: {x: -0.047415543, y: 0.09351773, z: 0.03127907}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4871097675916225}
+  m_RootOrder: 0
+--- !u!1 &1230701124224404
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4616761145231298}
+  m_Layer: 0
+  m_Name: Poison_TailBone02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4616761145231298
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230701124224404}
+  m_LocalRotation: {x: -0.6903455, y: -0.15304592, z: 0.030843556, w: 0.7064338}
+  m_LocalPosition: {x: -0.0007453918, y: 0.30138397, z: -0.025558852}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4522607596196345}
+  - {fileID: 4886389713513090}
+  m_Father: {fileID: 4871097675916225}
+  m_RootOrder: 1
+--- !u!1 &1159344771414128
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4522607596196345}
+  m_Layer: 0
+  m_Name: Poison_LeafBone03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4522607596196345
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159344771414128}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.49999997, w: 0.50000006}
+  m_LocalPosition: {x: -0.046298064, y: 0.12259804, z: 0.048627775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4616761145231298}
+  m_RootOrder: 0
+--- !u!1 &1328805483302981
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4886389713513090}
+  m_Layer: 0
+  m_Name: Poison_TailBone03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4886389713513090
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328805483302981}
+  m_LocalRotation: {x: -0.6903455, y: -0.15304591, z: -0.030843567, w: 0.7064338}
+  m_LocalPosition: {x: -0.0067731473, y: 0.29338104, z: -0.021454658}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4630927150289074}
+  m_Father: {fileID: 4616761145231298}
+  m_RootOrder: 1
+--- !u!1 &1214549868620738
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4630927150289074}
+  m_Layer: 0
+  m_Name: Poison_TailBone04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4630927150289074
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214549868620738}
+  m_LocalRotation: {x: -0.6830127, y: -0.1830127, z: 7.2253306E-09, w: 0.70710677}
+  m_LocalPosition: {x: -0.0074194716, y: 0.30404872, z: -0.0082637025}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4265437738093462}
+  - {fileID: 4878002161775328}
+  m_Father: {fileID: 4886389713513090}
+  m_RootOrder: 0
+--- !u!1 &1560017933843735
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4265437738093462}
+  m_Layer: 0
+  m_Name: Poison_TailBone05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4265437738093462
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560017933843735}
+  m_LocalRotation: {x: -7.30692E-14, y: -8.824701E-14, z: -0.53729963, w: 0.8433914}
+  m_LocalPosition: {x: 0.0013184928, y: 0.076691285, z: 3.814697E-07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4630927150289074}
+  m_RootOrder: 0
+--- !u!1 &1791722417828266
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4878002161775328}
+  m_Layer: 0
+  m_Name: Poison_TailBone006
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4878002161775328
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1791722417828266}
+  m_LocalRotation: {x: -4.7097515E-14, y: -3.5617258E-14, z: -0.604504, w: 0.7966022}
+  m_LocalPosition: {x: 0.051765155, y: 0.7083274, z: 0.5454132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4630927150289074}
+  m_RootOrder: 1
+--- !u!1 &1879259943776611
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4840348569336173}
+  m_Layer: 0
+  m_Name: Point_Arm_Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4840348569336173
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1879259943776611}
+  m_LocalRotation: {x: -1.6637765E-07, y: -1.07805896E-07, z: 0.72199774, w: 0.6918954}
+  m_LocalPosition: {x: -0, y: 0.009999967, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4233355319488105}
+  m_RootOrder: 1

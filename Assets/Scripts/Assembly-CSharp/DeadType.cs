@@ -1,0 +1,13 @@
+public enum DeadType
+{
+	ANGEL = 0,
+	EXPLOSION = 1,
+	ENERGY_BLUE = 2,
+	ENERGY_RED = 3,
+	ENERGY_PINK = 4,
+	ENERGY_CYAN = 5,
+	ENERGY_LIGHT = 6,
+	ENERGY_GREEN = 7,
+	ENERGY_ORANGE = 8,
+	ENERGY_WHITE = 9
+}

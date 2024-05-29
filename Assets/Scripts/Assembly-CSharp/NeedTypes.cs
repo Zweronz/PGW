@@ -1,0 +1,13 @@
+public enum NeedTypes
+{
+	LEVEL = 1,
+	SKILL = 2,
+	ARTIKUL = 3,
+	DATA = 4,
+	PAYMENT_USER = 5,
+	DATA_REGISTRATION = 6,
+	TIER = 7,
+	ACTIVE_SLOT_TYPE = 8,
+	MODE_ID = 9,
+	BLOCK_ARTIKUL = 10
+}

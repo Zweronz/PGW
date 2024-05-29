@@ -1,0 +1,12 @@
+public enum StockWndType
+{
+	NEW_YEAR = 0,
+	BANK = 1,
+	CLANS = 2,
+	KUNG_FU_PANDA = 3,
+	VALENTINE_DAY = 4,
+	GACHA = 5,
+	BATMAN = 6,
+	MAIL_VERIFICATION = 7,
+	WEAPON_SALE = 8
+}

@@ -1,0 +1,17 @@
+public enum WeaponType
+{
+	UNDEFINED = 0,
+	MELEE = 1,
+	SHOT_MELEE = 2,
+	SHOTGUN = 3,
+	DOUBLE_SHOT = 4,
+	MAGIC = 5,
+	FLAME_THROWER = 6,
+	BAZOOKA = 7,
+	RAILGUN = 8,
+	FREEZER = 9,
+	GRANADE_LAUNCHER = 10,
+	RAY_AOE = 11,
+	MELEE_AOE = 12,
+	HOOK = 13
+}

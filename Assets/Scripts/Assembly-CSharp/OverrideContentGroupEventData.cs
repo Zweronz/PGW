@@ -1,0 +1,6 @@
+public sealed class OverrideContentGroupEventData
+{
+	public UserOverrideContentGroupData userOverrideContentGroupData_0;
+
+	public OverrideContentGroupChangeType overrideContentGroupChangeType_0;
+}

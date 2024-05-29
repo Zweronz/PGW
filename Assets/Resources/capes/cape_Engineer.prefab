@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1440486133740195}
+  m_IsPrefabParent: 1
+  m_IsExploded: 0
+--- !u!1 &1440486133740195
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4214519600461121}
+  - 111: {fileID: 111076554227563836}
+  - 114: {fileID: 114957154770247977}
+  m_Layer: 0
+  m_Name: cape_Engineer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4214519600461121
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440486133740195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9073486E-06, y: 0, z: 1.5258789E-07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4209789480057823}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!111 &111076554227563836
+Animation:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440486133740195}
+  m_Enabled: 1
+  m_Animation: {fileID: 7400000, guid: 93d355662c89c1543a8c5d1463d2c169, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 93d355662c89c1543a8c5d1463d2c169, type: 2}
+  - {fileID: 7400000, guid: 499e2919adbf192428c49c00f06b8d48, type: 2}
+  - {fileID: 7400000, guid: c0967f0513146a34e9ec6345b8c6f136, type: 2}
+  - {fileID: 7400000, guid: 867a74bf8eace2e408be015c9bd6eaf3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &114957154770247977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440486133740195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e07982b1239007add36c58bf68c4440, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  scaleShop: 150
+  positionShop: {x: -6.615479, y: -0.05453491, z: 0.2321405}
+  rotationShop: {x: 0, y: 30, z: -15}
+  tier: 0
+  localizeKey: Key_0748
+  prefabName: Capes/cape_Engineer
+--- !u!1 &1388002889553215
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4209789480057823}
+  - 33: {fileID: 33954198644052490}
+  - 23: {fileID: 23915635959658361}
+  m_Layer: 0
+  m_Name: cape_Engineer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4209789480057823
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388002889553215}
+  m_LocalRotation: {x: 0.056531306, y: 0.7048433, z: -0.056531288, w: 0.7048435}
+  m_LocalPosition: {x: -0.14501251, y: 1.4993284, z: 0.009233398}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 4214519600461121}
+  m_RootOrder: 0
+--- !u!33 &33954198644052490
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388002889553215}
+  m_Mesh: {fileID: 4300000, guid: d9757b3dcef530b4a83e5eb1f6851614, type: 2}
+--- !u!23 &23915635959658361
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388002889553215}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 4219c570d97411a4c991f83b41185400, type: 2}
+  m_SubsetIndices: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0

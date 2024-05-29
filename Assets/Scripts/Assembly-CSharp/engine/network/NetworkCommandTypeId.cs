@@ -1,0 +1,15 @@
+namespace engine.network
+{
+	public enum NetworkCommandTypeId
+	{
+		NONE = -1,
+		SIMPLE_RESPONSE_CMD = 1,
+		MAINTENANCE_EVENT = 2,
+		SHUTDOWN_EVENT = 3,
+		CLOSE_CONNECTION_EVENT = 4,
+		DATA_SCHEME_UPDATE_EVENT = 5,
+		BANK_UPDATE_EVENT = 6,
+		CHANGE_CONNECTION_URL_EVENT = 7,
+		GAME_COMMANDS = 100
+	}
+}
