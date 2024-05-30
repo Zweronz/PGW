@@ -64,6 +64,29 @@ public sealed class ModesController
 
 	private List<ModeData> _modeData;
 
+	private List<MapData> mapData
+	{
+		get
+		{
+			if (_mapData == null)
+			{
+				List<MapData> data = new List<MapData>();
+				Maps maps = Resources.Load<Maps>("Maps");
+
+				foreach (Maps.Map map in maps.maps)
+				{
+					data.Add(map.ToMapData());
+				}
+
+				_mapData = data;
+			}
+
+			return _mapData;
+		}
+	}
+
+	private List<MapData> _mapData;
+
 	public List<ModeData> GetModesByType(ModeType modeType_0)
 	{
 		list_0.Clear();
@@ -73,7 +96,7 @@ public sealed class ModesController
 			ModeData modeData = list[i];
 			if (IsModeValid(modeData))
 			{
-				MapData objectByKey = MapStorage.Get.Storage.GetObjectByKey(modeData.Int32_1);
+				MapData objectByKey = mapData.Find(x => x.Int32_0 == modeData.Int32_1);//MapStorage.Get.Storage.GetObjectByKey(modeData.Int32_1);
 				if (objectByKey != null && objectByKey.Boolean_0 && !objectByKey.Boolean_3)
 				{
 					list_0.Add(modeData);

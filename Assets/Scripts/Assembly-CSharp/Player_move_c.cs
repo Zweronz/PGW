@@ -1405,7 +1405,7 @@ public sealed class Player_move_c : MonoBehaviour
 		}
 		if (!Boolean_4)
 		{
-			Texture_0 = SkinsController.Texture2D_0;
+			Texture_0 = Resources.Load<Texture2D>("skinstextures/beginnerSkin");//SkinsController.Texture2D_0;
 			Texture_0.filterMode = FilterMode.Point;
 		}
 		GameObject[] array = GameObject.FindGameObjectsWithTag("NetworkTable");

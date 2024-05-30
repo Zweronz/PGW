@@ -767,6 +767,7 @@ public sealed class NetworkStartTable : MonoBehaviour
 
 	private void StartUnsafe()
 	{
+		Boolean_9 = true;
 		if (Boolean_4)
 		{
 			gameObject_5 = GameObject.FindGameObjectWithTag("CamTemp");
@@ -807,7 +808,7 @@ public sealed class NetworkStartTable : MonoBehaviour
 
 	public void sendMySkin()
 	{
-		Texture2D texture2D_ = SkinsController.Texture2D_0;
+		Texture2D texture2D_ = Resources.Load<Texture2D>("skinstextures/beginnerSkin");//SkinsController.Texture2D_0;
 		byte[] inArray = texture2D_.EncodeToPNG();
 		string text = Convert.ToBase64String(inArray);
 		PhotonView_0.RPC("setMySkin", PhotonTargets.AllBuffered, text);

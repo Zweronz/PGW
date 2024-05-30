@@ -137,6 +137,8 @@ public sealed class FightMatchMakingController
 
 	public void JoinRandomRoom(Hashtable hashtable_0, Func<int, int, bool> func_2 = null)
 	{
+		try
+		{
 		if (hashtable_0 == null)
 		{
 			Log.AddLine("FightMatchMakingController::JoinRandomRoom. roomProperties == null");
@@ -166,6 +168,7 @@ public sealed class FightMatchMakingController
 		RoomInfo roomInfo2 = list2[0];
 		list_0.Add(roomInfo2.String_0);
 		MonoSingleton<FightController>.Prop_0.JoinRoom(roomInfo2.String_0);
+		}catch(Exception e){Debug.LogError(e);}
 	}
 
 	public void OnJoinedRoom()

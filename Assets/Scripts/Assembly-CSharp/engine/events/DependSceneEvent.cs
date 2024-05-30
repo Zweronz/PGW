@@ -108,6 +108,7 @@ namespace engine.events
 			}
 			catch (Exception exception_)
 			{
+				UnityEngine.Debug.LogError(exception_);
 				MonoSingleton<Log>.Prop_0.DumpError(exception_);
 			}
 		}

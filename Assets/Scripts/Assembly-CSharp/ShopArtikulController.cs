@@ -71,7 +71,6 @@ public sealed class ShopArtikulController
 
 	public List<ShopArtikulData> GetShopArtikulsBySlot(SlotType slotType_0)
 	{
-		Debug.LogError(shopArtikuls.FindAll(x => x.SlotType_0 == slotType_0).Count);
 		return shopArtikuls.FindAll(x => x.SlotType_0 == slotType_0);
 	}
 

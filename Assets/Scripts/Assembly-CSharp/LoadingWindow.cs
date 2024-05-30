@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using engine.unity;
 using pixelgun.tutorial;
+using System.Collections.Generic;
 
 [GameWindowParams(GameWindowType.Loading)]
 public class LoadingWindow : BaseGameWindow
@@ -49,6 +50,29 @@ public class LoadingWindow : BaseGameWindow
 		}
 	}
 
+	private static List<MapData> mapData
+	{
+		get
+		{
+			if (_mapData == null)
+			{
+				List<MapData> data = new List<MapData>();
+				Maps maps = Resources.Load<Maps>("Maps");
+
+				foreach (Maps.Map map in maps.maps)
+				{
+					data.Add(map.ToMapData());
+				}
+
+				_mapData = data;
+			}
+
+			return _mapData;
+		}
+	}
+
+	private static List<MapData> _mapData;
+
 	public override void OnShow()
 	{
 		if (base.WindowShowParameters_0 == null)
@@ -60,7 +84,7 @@ public class LoadingWindow : BaseGameWindow
 		LoadingWindowParams loadingWindowParams = (LoadingWindowParams)base.WindowShowParameters_0;
 		if (loadingWindowParams.modeData_0 != null)
 		{
-			MapData objectByKey = MapStorage.Get.Storage.GetObjectByKey(loadingWindowParams.modeData_0.Int32_1);
+			MapData objectByKey = mapData.Find(x => x.Int32_0 == loadingWindowParams.modeData_0.Int32_1);//MapStorage.Get.Storage.GetObjectByKey(loadingWindowParams.modeData_0.Int32_1);
 			string path = "LevelLoadings/Hi/Loading_" + objectByKey.String_0;
 			uitexture_0.Texture_0 = Resources.Load(path) as Texture2D;
 			uilabel_0.gameObject.SetActive(true);

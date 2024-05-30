@@ -41,5 +41,18 @@ public class PlayerParamsSettings
 	[ProtoMember(12)]
 	public float SideDeacc;
 
+	static PlayerParamsSettings()
+	{
+		Get = new PlayerParamsSettings
+		{
+			PlayerForwardSpeed = 1f,
+			PlayerBackwardSpeed = 1f,
+			PlayerSideStepSpeed = 1f,
+			PlayerJumpSpeed = 1f,
+			PlayerFOV = 60,
+			GunFOV = 60,
+		};
+	}
+
 	public static PlayerParamsSettings Get { get; private set; }
 }

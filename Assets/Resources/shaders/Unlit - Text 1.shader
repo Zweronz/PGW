@@ -1,6 +1,6 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Unlit/Text (AlphaClip)"
+Shader "Hidden/Unlit/Text 1" 
 {
 	Properties
 	{
@@ -17,7 +17,7 @@ Shader "Unlit/Text (AlphaClip)"
 			"IgnoreProjector" = "True"
 			"RenderType" = "Transparent"
 		}
-
+		
 		Pass
 		{
 			Cull Off
@@ -27,14 +27,16 @@ Shader "Unlit/Text (AlphaClip)"
 			Fog { Mode Off }
 			//ColorMask RGB
 			Blend SrcAlpha OneMinusSrcAlpha
-		
+
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
+
 			#include "UnityCG.cginc"
 
 			sampler2D _MainTex;
-			float4 _MainTex_ST;
+			float4 _ClipRange0 = float4(0.0, 0.0, 1.0, 1.0);
+			float2 _ClipArgs0 = float2(1000.0, 1000.0);
 
 			struct appdata_t
 			{
@@ -57,24 +59,19 @@ Shader "Unlit/Text (AlphaClip)"
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.color = v.color;
 				o.texcoord = v.texcoord;
-				o.worldPos = TRANSFORM_TEX(v.vertex.xy, _MainTex);
+				o.worldPos = v.vertex.xy * _ClipRange0.zw + _ClipRange0.xy;
 				return o;
 			}
 
 			half4 frag (v2f IN) : COLOR
 			{
+				// Softness factor
+				float2 factor = (float2(1.0, 1.0) - abs(IN.worldPos)) * _ClipArgs0;
+			
 				// Sample the texture
 				half4 col = IN.color;
 				col.a *= tex2D(_MainTex, IN.texcoord).a;
-
-				float2 factor = abs(IN.worldPos);
-				float val = 1.0 - max(factor.x, factor.y);
-
-				// Option 1: 'if' statement
-				if (val < 0.0) col.a = 0.0;
-
-				// Option 2: no 'if' statement -- may be faster on some devices
-				//col.a *= ceil(clamp(val, 0.0, 1.0));
+				col.a *= clamp( min(factor.x, factor.y), 0.0, 1.0);
 
 				return col;
 			}

@@ -2,6 +2,7 @@ using UnityEngine;
 using engine.events;
 using engine.unity;
 using pixelgun.tutorial;
+using System.Collections.Generic;
 
 [ScreenParams(GameScreenType.FightScreen)]
 public class FightScreen : BaseGameScreen
@@ -42,9 +43,32 @@ public class FightScreen : BaseGameScreen
 		LoadingWindow.Show(new LoadingWindowParams(MonoSingleton<FightController>.Prop_0.ModeData_0, MonoSingleton<FightController>.Prop_0.ModeData_0.Boolean_0));
 	}
 
+	private static List<MapData> mapData
+	{
+		get
+		{
+			if (_mapData == null)
+			{
+				List<MapData> data = new List<MapData>();
+				Maps maps = Resources.Load<Maps>("Maps");
+
+				foreach (Maps.Map map in maps.maps)
+				{
+					data.Add(map.ToMapData());
+				}
+
+				_mapData = data;
+			}
+
+			return _mapData;
+		}
+	}
+
+	private static List<MapData> _mapData;
+
 	public void SwitchToBattle()
 	{
-		MapData objectByKey = MapStorage.Get.Storage.GetObjectByKey(MonoSingleton<FightController>.Prop_0.ModeData_0.Int32_1);
+		MapData objectByKey = mapData.Find(x => x.Int32_0 == MonoSingleton<FightController>.Prop_0.ModeData_0.Int32_1);//MapStorage.Get.Storage.GetObjectByKey(MonoSingleton<FightController>.Prop_0.ModeData_0.Int32_1);
 		Application.LoadLevelAsync(objectByKey.String_0);
 	}
 

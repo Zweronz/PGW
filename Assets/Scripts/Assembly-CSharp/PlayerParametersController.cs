@@ -27,7 +27,7 @@ public class PlayerParametersController : MonoBehaviour
 	{
 		get
 		{
-			return UserController.UserController_0.GetUserLeveData().Single_0;
+			return 100f;//UserController.UserController_0.GetUserLeveData().Single_0;
 		}
 	}
 
@@ -51,6 +51,7 @@ public class PlayerParametersController : MonoBehaviour
 		}
 		private set
 		{
+			Debug.LogError(value);
 			obscuredFloat_1 = value;
 		}
 	}

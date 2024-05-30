@@ -2,8 +2,8 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1001 &100100000
 Prefab:
-  serializedVersion: 2
   m_ObjectHideFlags: 1
+  serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
@@ -11,22 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1169268140821412}
   m_IsPrefabParent: 1
-  m_IsExploded: 0
 --- !u!1 &1169268140821412
 GameObject:
-  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4634405874895005}
-  - 20: {fileID: 20330244372367425}
-  - 124: {fileID: 124161288853114484}
-  - 92: {fileID: 92066423166483520}
-  - 81: {fileID: 81230639935058099}
-  - 114: {fileID: 114891147886824442}
-  - 114: {fileID: 114599683702343494}
-  - 114: {fileID: 114647928842644558}
+  - component: {fileID: 4634405874895005}
+  - component: {fileID: 20330244372367425}
+  - component: {fileID: 124161288853114484}
+  - component: {fileID: 92066423166483520}
+  - component: {fileID: 81230639935058099}
+  - component: {fileID: 114891147886824442}
+  - component: {fileID: 114599683702343494}
+  - component: {fileID: 114647928842644558}
   m_Layer: 0
   m_Name: Camera
   m_TagString: CamTemp
@@ -46,14 +45,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20330244372367425
 Camera:
-  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1169268140821412}
   m_Enabled: 1
+  serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
@@ -74,24 +74,14 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!124 &124161288853114484
-FlareLayer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1169268140821412}
-  m_Enabled: 1
---- !u!92 &92066423166483520
-GUILayer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1169268140821412}
-  m_Enabled: 1
 --- !u!81 &81230639935058099
 AudioListener:
   m_ObjectHideFlags: 0
@@ -99,18 +89,13 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1169268140821412}
   m_Enabled: 1
---- !u!114 &114891147886824442
-MonoBehaviour:
+--- !u!92 &92066423166483520
+Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1169268140821412}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c92068bf9652f468eba6b495aa5819, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  killCamController: {fileID: 114599683702343494}
 --- !u!114 &114599683702343494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +105,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b10ffb30e400aee4dc0825f8295068a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   cameraPivot: {fileID: 0}
   TimeRotationCam: 15
   distance: 8
@@ -157,8 +142,27 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03ab87e5e210453b29bc2d50698df486, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 3b6ae3bcc05341f4f995f165bb5a3889, type: 3}
   texture_0: {fileID: 0}
   float_0: 0
+--- !u!114 &114891147886824442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169268140821412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c92068bf9652f468eba6b495aa5819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killCamController: {fileID: 114599683702343494}
+--- !u!124 &124161288853114484
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169268140821412}
+  m_Enabled: 1

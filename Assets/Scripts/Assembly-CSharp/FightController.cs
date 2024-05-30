@@ -8,6 +8,7 @@ using engine.helpers;
 using engine.network;
 using engine.operations;
 using engine.unity;
+using System.Collections.Generic;
 
 public sealed class FightController : MonoSingleton<FightController>
 {
@@ -390,11 +391,13 @@ public sealed class FightController : MonoSingleton<FightController>
 		Log.AddLine(string.Format("[FightController::JoinRandomRoom]"));
 		if (modeData_1 == null && ModeData_0 == null)
 		{
+			Debug.LogError("womp");
 			return;
 		}
 		ModeData_0 = modeData_1 ?? ModeData_0;
 		if (ModeData_0.Boolean_0)
 		{
+			Debug.LogError("wemp");
 			Disconnect();
 			PhotonNetwork.Boolean_3 = true;
 		}
@@ -418,7 +421,7 @@ public sealed class FightController : MonoSingleton<FightController>
 		{
 			FightMatchMakingController_0.JoinRandomRoom(hashtable, func_0);
 		}
-		catch (Exception)
+		catch (Exception e)
 		{
 			Connect();
 		}
@@ -448,9 +451,11 @@ public sealed class FightController : MonoSingleton<FightController>
 		action_0 = OnCreateFightAllowed;
 		StartFightNetworkCommand startFightNetworkCommand = new StartFightNetworkCommand();
 		startFightNetworkCommand.int_1 = ModeData_0.Int32_0;
-		startFightNetworkCommand.int_2 = ((int_6 != 0) ? int_6 : ModesController.ModesController_0.GetMinTimeLimit(modeData_1.Int32_0));
+		startFightNetworkCommand.int_2 = ((int_6 != 0) ? int_6 : /*ModesController.ModesController_0.GetMinTimeLimit(modeData_1.Int32_0)*/300);
 		startFightNetworkCommand.bool_0 = bool_1;
-		AbstractNetworkCommand.Send(startFightNetworkCommand);
+		startFightNetworkCommand.string_0 = UnityEngine.Random.Range(0f, 100f).ToString();
+		startFightNetworkCommand.Answered(startFightNetworkCommand);
+		//AbstractNetworkCommand.Send(startFightNetworkCommand);
 	}
 
 	public void LeaveRoom(bool bool_3 = false)
@@ -499,7 +504,8 @@ public sealed class FightController : MonoSingleton<FightController>
 		endFightNetworkCommand.bool_0 = bool_3;
 		endFightNetworkCommand.int_3 = int_7;
 		endFightNetworkCommand.bool_1 = bool_2;
-		AbstractNetworkCommand.Send(endFightNetworkCommand);
+		endFightNetworkCommand.Answered(endFightNetworkCommand);
+		//AbstractNetworkCommand.Send(endFightNetworkCommand);
 		bool_2 = false;
 	}
 
@@ -559,7 +565,7 @@ public sealed class FightController : MonoSingleton<FightController>
 		roomOptions.hashtable_0 = new Hashtable();
 		roomOptions.hashtable_0.Add("Mode", ModeData_0.Int32_0);
 		roomOptions.hashtable_0.Add("Pass", string_2);
-		roomOptions.hashtable_0.Add("RoundTime", (Int32_0 == 0) ? ModesController.ModesController_0.GetMinTimeLimit(ModeData_0.Int32_0) : Int32_0);
+		roomOptions.hashtable_0.Add("RoundTime", (Int32_0 == 0) ? /*ModesController.ModesController_0.GetMinTimeLimit(ModeData_0.Int32_0)*/300 : Int32_0);
 		roomOptions.hashtable_0.Add("TimeMatchStart", Utility.Double_0);
 		roomOptions.hashtable_0.Add("CustomRoomName", string_1);
 		roomOptions.hashtable_0.Add("FightId", string_0);
@@ -704,7 +710,8 @@ public sealed class FightController : MonoSingleton<FightController>
 			StartFightNetworkCommand startFightNetworkCommand = new StartFightNetworkCommand();
 			startFightNetworkCommand.int_1 = ModeData_0.Int32_0;
 			startFightNetworkCommand.string_0 = fightIdFromPhotonRoom;
-			AbstractNetworkCommand.Send(startFightNetworkCommand);
+			startFightNetworkCommand.Answered(startFightNetworkCommand);
+			//AbstractNetworkCommand.Send(startFightNetworkCommand);
 			ClanBattleController.ClanBattleController_0.ClearInvitedRoom();
 		}
 		else

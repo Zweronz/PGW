@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using engine.helpers;
 using engine.unity;
+using System.Collections.Generic;
 
 public class SelectMapWindowItem : MonoBehaviour
 {
@@ -33,13 +34,36 @@ public class SelectMapWindowItem : MonoBehaviour
 
 	private float float_0 = 3f;
 
+	private static List<MapData> mapData
+	{
+		get
+		{
+			if (_mapData == null)
+			{
+				List<MapData> data = new List<MapData>();
+				Maps maps = Resources.Load<Maps>("Maps");
+
+					foreach (Maps.Map map in maps.maps)
+					{
+						data.Add(map.ToMapData());
+					}
+
+					_mapData = data;
+				}
+
+				return _mapData;
+		}
+	}
+
+	private static List<MapData> _mapData;
+
 	private void Start()
 	{
 		if (mode == null)
 		{
 			return;
 		}
-		mapData_0 = MapStorage.Get.Storage.GetObjectByKey(mode.Int32_1);
+		mapData_0 = mapData.Find(x => x.Int32_0 == mode.Int32_1);//MapStorage.Get.Storage.GetObjectByKey(mode.Int32_1);
 		if (mapData_0 != null)
 		{
 			Texture texture = ImageLoader.LoadMapPreviewTexture(mapData_0);

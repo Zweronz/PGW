@@ -253,15 +253,61 @@ namespace pixelgun.tutorial
 			}
 		}
 
+		private static List<ModeData> modeData
+		{
+			get
+			{
+				if (_modeData == null)
+				{
+					List<ModeData> data = new List<ModeData>();
+					Modes modes = Resources.Load<Modes>("Modes");
+
+					foreach (Modes.Mode mode in modes.modes)
+					{
+						data.Add(mode.ToModeData());
+					}
+
+					_modeData = data;
+				}
+
+				return _modeData;
+			}
+		}
+
+		private static List<ModeData> _modeData;
+
+		private static List<MapData> mapData
+		{
+			get
+			{
+				if (_mapData == null)
+				{
+					List<MapData> data = new List<MapData>();
+					Maps maps = Resources.Load<Maps>("Maps");
+
+					foreach (Maps.Map map in maps.maps)
+					{
+						data.Add(map.ToMapData());
+					}
+
+					_mapData = data;
+				}
+
+				return _mapData;
+			}
+		}
+
+		private static List<MapData> _mapData;
+
 		private static void InitMapData()
 		{
-			List<ModeData> modesByType = ModesController.ModesController_0.GetModesByType(ModeType.TUTORIAL);
+			List<ModeData> modesByType = LocalTutorialData.modeData.FindAll(x => x.ModeType_0 == ModeType.TUTORIAL);//ModesController.ModesController_0.GetModesByType(ModeType.TUTORIAL);
 			if (modesByType == null || modesByType.Count == 0)
 			{
 				return;
 			}
 			ModeData modeData = modesByType[0];
-			MapData objectByKey = MapStorage.Get.Storage.GetObjectByKey(modeData.Int32_1);
+			MapData objectByKey = mapData.Find(x => x.Int32_0 == modeData.Int32_1);//MapStorage.Get.Storage.GetObjectByKey(modeData.Int32_1);
 			if (objectByKey == null)
 			{
 				return;

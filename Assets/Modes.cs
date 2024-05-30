@@ -32,6 +32,7 @@ public class Modes : ScriptableObject
 				Int32_5 = order,
 				Int32_6 = monsterCount,
 
+				Boolean_1 = true,
 				Boolean_2 = preset,
 			};
 		}
