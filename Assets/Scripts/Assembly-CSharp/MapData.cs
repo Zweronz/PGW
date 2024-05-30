@@ -6,30 +6,39 @@ using engine.data;
 [ProtoContract]
 public sealed class MapData
 {
+	//mapId
 	[CompilerGenerated]
 	private int int_0;
 
+	//sceneName
 	[CompilerGenerated]
 	private string string_0;
 
+	//localizationKey
 	[CompilerGenerated]
 	private string string_1;
 
+	//mapSize
 	[CompilerGenerated]
 	private MapSize mapSize_0;
 
+	//previewTexture
 	[CompilerGenerated]
 	private string string_2;
 
+	//online(?)
 	[CompilerGenerated]
 	private bool bool_0;
 
+	//isNew
 	[CompilerGenerated]
 	private bool bool_1;
 
+	//unused
 	[CompilerGenerated]
 	private bool bool_2;
 
+	//survival(?)
 	[CompilerGenerated]
 	private bool bool_3;
 
