@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using ProtoBuf;
+using UnityEngine;
 
 [ProtoContract]
 public sealed class User
@@ -59,4 +60,19 @@ public sealed class User
 	public int int_7;
 
 	public float float_0;
+
+	private static User _cachedLocalUser;
+
+	public static User LocalUser
+	{
+		get
+		{
+			if (_cachedLocalUser == null)
+			{
+				_cachedLocalUser = new User();
+				_cachedLocalUser.string_0 = PlayerPrefs.GetString("NamePlayer", "");
+			}
+			return _cachedLocalUser;
+		}
+	}
 }

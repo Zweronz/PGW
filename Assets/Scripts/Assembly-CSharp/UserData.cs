@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using ProtoBuf;
+using UnityEngine;
 
 [ProtoContract]
 public sealed class UserData
@@ -46,6 +47,43 @@ public sealed class UserData
 	public LocalUserData localUserData_0 = new LocalUserData();
 
 	public LocalShopData localShopData_0 = new LocalShopData();
+
+	private static UserData _cachedLocalUserData;
+
+	public static UserData LocalUserData
+	{
+		get
+		{
+			if (_cachedLocalUserData == null)
+			{
+				_cachedLocalUserData = new UserData();
+				_cachedLocalUserData.user_0 = User.LocalUser;
+				_cachedLocalUserData.userProfileStatData_0 = new UserProfileStatData();
+				_cachedLocalUserData.userProfileStatData_0.dictionary_0 = new Dictionary<ModeType, int>
+				{
+					{ ModeType.DEATH_MATCH, PlayerPrefs.GetInt("KillsDeathMatch", 0) },
+					{ ModeType.TEAM_FIGHT, PlayerPrefs.GetInt("KillsTeamFight", 0) },
+					{ ModeType.FLAG_CAPTURE, PlayerPrefs.GetInt("KillsFlagCapture", 0) }
+				};
+				_cachedLocalUserData.userProfileStatData_0.int_0 = PlayerPrefs.GetInt("KillSeries", 0);
+				_cachedLocalUserData.userProfileStatData_0.int_1 = PlayerPrefs.GetInt("Headshots", 0);
+				_cachedLocalUserData.userProfileStatData_0.float_0 = PlayerPrefs.GetFloat("KillRate", 0.0f);
+				_cachedLocalUserData.userProfileStatData_0.float_1 = PlayerPrefs.GetFloat("Accuracy", 0.0f);
+
+				_cachedLocalUserData.userProfileStatData_0.dictionary_1 = new Dictionary<ModeType, int>
+				{
+					{ ModeType.DEATH_MATCH, PlayerPrefs.GetInt("WinsDeathMatch", 0) },
+					{ ModeType.TEAM_FIGHT, PlayerPrefs.GetInt("WinsTeamFight", 0) },
+					{ ModeType.FLAG_CAPTURE, PlayerPrefs.GetInt("WinsFlagCapture", 0) }
+				};
+				_cachedLocalUserData.userProfileStatData_0.float_2 = PlayerPrefs.GetFloat("WinRate", 0.0f);
+				_cachedLocalUserData.userProfileStatData_0.int_2 = PlayerPrefs.GetInt("WeeklyWins", 0);
+				_cachedLocalUserData.userProfileStatData_0.int_3 = PlayerPrefs.GetInt("FirstPlaces", 0);
+				_cachedLocalUserData.userProfileStatData_0.int_4 = PlayerPrefs.GetInt("FlagCaptures", 0);
+			}
+			return _cachedLocalUserData;
+		}
+	}
 
 	internal void Init()
 	{

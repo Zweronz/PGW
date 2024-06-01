@@ -294,8 +294,14 @@ public sealed class FightController : MonoSingleton<FightController>
 
 	public void Update()
 	{
-		FightStatController_0.Update();
-		FightTimeController_0.Update();
+		try
+		{
+			FightStatController_0.Update();
+			FightTimeController_0.Update();
+		} catch (Exception e)
+		{
+			Debug.LogException(e);
+		}
 	}
 
 	public void LevelLoaded()

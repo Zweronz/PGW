@@ -4,6 +4,7 @@ using engine.events;
 using engine.helpers;
 using engine.network;
 using engine.operations;
+using UnityEngine;
 
 public class UserNickController : BaseEvent<UserNickEventParams>
 {
@@ -70,6 +71,9 @@ public class UserNickController : BaseEvent<UserNickEventParams>
 	public void ProcessUserSetNick(string string_0)
 	{
 		MessageWindowRename.MessageWindowRename_0.Hide();
+		PlayerPrefs.SetString("NamePlayer", string_0);
+		UsersData.Subscribe(UsersData.EventType.USER_CHANGED, OnUserChanged);
+		UsersData.Dispatch(UsersData.EventType.USER_CHANGED);
 		//if (CheckUserNickAfterRename(string_0))
 		//{
 		//	UsersData.Subscribe(UsersData.EventType.USER_CHANGED, OnUserChanged);

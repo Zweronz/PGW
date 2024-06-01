@@ -9,6 +9,7 @@ using engine.helpers;
 using engine.network;
 using engine.operations;
 using engine.unity;
+using System.Collections;
 
 namespace pixelgun.tutorial
 {
@@ -44,7 +45,7 @@ namespace pixelgun.tutorial
 		public void Start()
 		{
 			bool_0 = true;
-			LocalTutorialData.Int32_0 = 0;
+			LocalTutorialData.Int32_0 = PlayerPrefs.GetInt("TutorStep", 0);
 			tutorialController_0.bool_0 &= AppStateController.AppStateController_0.States_0 == AppStateController.States.MAIN_MENU;
 			if (bool_0)
 			{
@@ -195,12 +196,44 @@ namespace pixelgun.tutorial
 			OperationsManager.OperationsManager_0.Add(operation_);
 		}
 
+		private IEnumerator FinalStepAsCoroutine()
+		{
+			IncrementStepCounter();
+			try
+			{
+				Tutorial.Tutorial_0.FinalStep();
+			} catch { }
+			FinalTutorial();
+			yield return new WaitForSeconds(4.5f);
+			UnblockInputForOpenSelectMapButtonInTutorialMode();
+			try
+			{
+				Tutorial.Tutorial_0.PostFinalStep001();
+			} catch { }
+			//new WaitShowWindowOperation(GameWindowType.SelectMap, true), 
+			yield return new WaitForSeconds(1f);
+			UnblockInputForFightBtnInTutorialMode();
+			try
+			{
+				Tutorial.Tutorial_0.PostFinalStep002();
+			} catch { }
+			//new WaitShowWindowOperation(GameWindowType.Loading, true), 
+			HideTutor();
+		}
+
 		private void FinalStep()
 		{
 			UnblockUserInputBack();
 			Log.AddLine("[TutorialController::FinalStep]");
-			LocalTutorialData.severalOperations_0 = new SeveralOperations(new ActionOperation(IncrementStepCounter), new ActionOperation(Tutorial.Tutorial_0.FinalStep), new ActionOperation(FinalTutorial), new WaitOperation(4.5f), new ActionOperation(UnblockInputForOpenSelectMapButtonInTutorialMode), new ActionOperation(Tutorial.Tutorial_0.PostFinalStep001), new WaitShowWindowOperation(GameWindowType.SelectMap, true), new WaitOperation(1f), new ActionOperation(UnblockInputForFightBtnInTutorialMode), new ActionOperation(Tutorial.Tutorial_0.PostFinalStep002), new WaitShowWindowOperation(GameWindowType.Loading, true), new ActionOperation(HideTutor));
-			OperationsManager.OperationsManager_0.Add(LocalTutorialData.severalOperations_0);
+			try
+			{
+				LocalTutorialData.severalOperations_0 = new SeveralOperations(new ActionOperation(IncrementStepCounter), new ActionOperation(Tutorial.Tutorial_0.FinalStep), new ActionOperation(FinalTutorial), new WaitOperation(4.5f), new ActionOperation(UnblockInputForOpenSelectMapButtonInTutorialMode), new ActionOperation(Tutorial.Tutorial_0.PostFinalStep001), new WaitShowWindowOperation(GameWindowType.SelectMap, true), new WaitOperation(1f), new ActionOperation(UnblockInputForFightBtnInTutorialMode), new ActionOperation(Tutorial.Tutorial_0.PostFinalStep002), new WaitShowWindowOperation(GameWindowType.Loading, true), new ActionOperation(HideTutor));
+				LocalTutorialData.severalOperations_0.Start();
+			} 
+			catch 
+			{
+				Globals.Instance.StartCoroutine(FinalStepAsCoroutine());
+			}
 		}
 
 		private void Update()
@@ -263,10 +296,11 @@ namespace pixelgun.tutorial
 
 		private void SendTutorProgress(int int_0, bool bool_1)
 		{
-			TutorialStepNetworkCommand tutorialStepNetworkCommand = new TutorialStepNetworkCommand();
+			PlayerPrefs.SetInt("TutorProgress", int_0);
+			/*TutorialStepNetworkCommand tutorialStepNetworkCommand = new TutorialStepNetworkCommand();
 			tutorialStepNetworkCommand.int_1 = int_0;
 			tutorialStepNetworkCommand.bool_0 = bool_1;
-			AbstractNetworkCommand.Send(tutorialStepNetworkCommand);
+			AbstractNetworkCommand.Send(tutorialStepNetworkCommand);*/
 		}
 
 		private void SetPlayerPosition()

@@ -49,14 +49,14 @@ public class MessageWindowRename : MessageWindow
 			uilabel_1.String_0 = Localizer.Get("ui.rename_wnd.buy");
 			if (uilabel_3 != null)
 			{
-				AdditionalPurchaseData addPurchaseDataByKey = AdditionalPurchasesDataStorage.Get.GetAddPurchaseDataByKey(AdditionalPurchaseType.USER_RENAME);
+				/*AdditionalPurchaseData addPurchaseDataByKey = AdditionalPurchasesDataStorage.Get.GetAddPurchaseDataByKey(AdditionalPurchaseType.USER_RENAME);
 				if (addPurchaseDataByKey == null)
 				{
 					Log.AddLine("AdditionalPurchaseType.USER_RENAME not exist");
 					Hide();
 					return;
-				}
-				int int_ = addPurchaseDataByKey.int_1;
+				}*/
+				int int_ = 0/*addPurchaseDataByKey.int_1*/;
 				uilabel_3.String_0 = int_ + " ?";
 			}
 		}
@@ -120,14 +120,14 @@ public class MessageWindowRename : MessageWindow
 	{
 		if (messageWindowRename_0.Parameters_0.bool_6)
 		{
-			AdditionalPurchaseData addPurchaseDataByKey = AdditionalPurchasesDataStorage.Get.GetAddPurchaseDataByKey(AdditionalPurchaseType.USER_RENAME);
+			/*AdditionalPurchaseData addPurchaseDataByKey = AdditionalPurchasesDataStorage.Get.GetAddPurchaseDataByKey(AdditionalPurchaseType.USER_RENAME);
 			if (addPurchaseDataByKey == null)
 			{
 				Log.AddLine("AdditionalPurchaseType.USER_RENAME not exist");
 				Hide();
 				return;
-			}
-			int int_ = addPurchaseDataByKey.int_1;
+			}*/
+			int int_ = 0/*addPurchaseDataByKey.int_1*/;
 			if (UserController.UserController_0.GetMoneyByType(MoneyType.MONEY_TYPE_COINS) < int_)
 			{
 				BankController.BankController_0.TryOpenBank(BankController.BankSourceType.BANK_LOBBY);
@@ -139,6 +139,7 @@ public class MessageWindowRename : MessageWindow
 			uibutton_1.Boolean_0 = false;
 			ShowError(string.Empty);
 			UserNickController.UserNickController_0.ProcessUserSetNick(uiinput_0.String_2);
+			OnSetNickSuccess(default(UserNickEventParams));
 		}
 		else
 		{

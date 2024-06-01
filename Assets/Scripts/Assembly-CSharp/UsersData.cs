@@ -109,8 +109,7 @@ public sealed class UsersData
 		{
 			if (userData == null)
 			{
-				userData = new UserData();
-				userData.user_0 = new User();
+				userData = UserData.LocalUserData;
 			}
 			
 			return userData;

@@ -58,10 +58,15 @@ public class FightTimeController
 
 	public void SendPingCommand(bool bool_0 = false)
 	{
-		FightPingNetworkCommand fightPingNetworkCommand = new FightPingNetworkCommand();
-		fightPingNetworkCommand.string_0 = MonoSingleton<FightController>.Prop_0.String_1;
-		fightPingNetworkCommand.int_1 = (bool_0 ? 1 : 0);
-		AbstractNetworkCommand.Send(fightPingNetworkCommand);
+		try
+		{
+			FightPingNetworkCommand fightPingNetworkCommand = new FightPingNetworkCommand();
+			fightPingNetworkCommand.string_0 = MonoSingleton<FightController>.Prop_0.String_1;
+			fightPingNetworkCommand.int_1 = (bool_0 ? 1 : 0);
+			AbstractNetworkCommand.Send(fightPingNetworkCommand);
+		} catch {
+			
+		}
 	}
 
 	public void SetTimeToEnd(double double_1)

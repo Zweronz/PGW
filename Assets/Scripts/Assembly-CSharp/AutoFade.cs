@@ -44,7 +44,7 @@ public class AutoFade : MonoBehaviour
 	{
 		UnityEngine.Object.DontDestroyOnLoad(this);
 		autoFade_0 = this;
-		material_0 = new Material("Shader \"Plane/No zTest\" { SubShader { Pass { Blend SrcAlpha OneMinusSrcAlpha ZWrite Off Cull Off Fog { Mode Off } BindChannels { Bind \"Color\",color } } } }");
+		material_0 = new Material(Shader.Find("Plane/No zTest"));
 	}
 
 	private void DrawQuad(Color color_0, float float_1)

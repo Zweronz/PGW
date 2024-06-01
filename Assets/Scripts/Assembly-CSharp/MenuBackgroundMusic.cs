@@ -206,7 +206,7 @@ internal sealed class MenuBackgroundMusic : MonoBehaviour
 
 	private void OnApplicationFocus(bool bool_1)
 	{
-		if (!bool_0)
+		/*if (!bool_0)
 		{
 			return;
 		}
@@ -230,6 +230,6 @@ internal sealed class MenuBackgroundMusic : MonoBehaviour
 		else if (audioSource_1 != null)
 		{
 			audioSource_1.volume = float_1;
-		}
+		}*/
 	}
 }

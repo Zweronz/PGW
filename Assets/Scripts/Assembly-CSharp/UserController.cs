@@ -32,6 +32,10 @@ public sealed class UserController
 
 	public UserData GetUser(int int_0)
 	{
+		if (int_0 == UsersData.UsersData_0.UserData_0.user_0.int_0)
+		{
+			return UserData.LocalUserData;
+		}
 		return UsersData.UsersData_0.usersStorage_0.SearchUnique(0, int_0);
 	}
 
@@ -368,13 +372,20 @@ public sealed class UserController
 
 	public void UnequipArtikul(int int_0)
 	{
-		WearData objectByKey = WearStorage.Get.Storage.GetObjectByKey(int_0);
-		if (objectByKey == null || !objectByKey.Boolean_1)
+		try
 		{
-			EquipArtikulNetworkCommand equipArtikulNetworkCommand = new EquipArtikulNetworkCommand();
-			equipArtikulNetworkCommand.int_1 = int_0;
-			equipArtikulNetworkCommand.bool_0 = false;
-			AbstractNetworkCommand.Send(equipArtikulNetworkCommand);
+			WearData objectByKey = WearStorage.Get.Storage.GetObjectByKey(int_0);
+			if (objectByKey == null || !objectByKey.Boolean_1)
+			{
+				EquipArtikulNetworkCommand equipArtikulNetworkCommand = new EquipArtikulNetworkCommand();
+				equipArtikulNetworkCommand.int_1 = int_0;
+				equipArtikulNetworkCommand.bool_0 = false;
+				AbstractNetworkCommand.Send(equipArtikulNetworkCommand);
+			}
+		}
+		catch
+		{
+			
 		}
 	}
 
