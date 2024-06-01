@@ -40,9 +40,17 @@ public sealed class UserController
 		return UserData_0.userArtikulStorage_0.GetObjectByKey(string_0);
 	}
 
+	private static Dictionary<int, UserArtikul> userArtikuls = new Dictionary<int, UserArtikul>
+	{
+		{1, new UserArtikul { int_0 = 1, int_1 = 1 }},
+		{2, new UserArtikul { int_0 = 100, int_1 = 1 }}
+	};
+
 	public UserArtikul GetUserArtikulByArtikulId(int int_0)
 	{
-		return UserData_0.userArtikulStorage_0.SearchUnique(0, int_0);
+		UserArtikul artikul;
+		userArtikuls.TryGetValue(int_0, out artikul);
+		return artikul;
 	}
 
 	public List<UserArtikul> GetUserArtikulsBySlotType(SlotType slotType_0)

@@ -243,12 +243,12 @@ public sealed class AppController : BaseAppController
 
 	public override void Init()
 	{
-		if (!ProcessArguments_0.Boolean_0)
-		{
-			Log.AddLine("[AppController. Auth key not valid, start launcher!]");
-			NeedStartLauncher(LauncherStartReason.AUTH_KEY_NOT_VALID);
-			return;
-		}
+		//if (!ProcessArguments_0.Boolean_0)
+		//{
+		//	Log.AddLine("[AppController. Auth key not valid, start launcher!]");
+		//	NeedStartLauncher(LauncherStartReason.AUTH_KEY_NOT_VALID);
+		//	return;
+		//}
 		Log.AddLine(ProcessArguments_0.ToString());
 		ConnectionStatusEvent @event = EventManager.EventManager_0.GetEvent<ConnectionStatusEvent>();
 		if (!@event.Contains(OnNetworkFailure))

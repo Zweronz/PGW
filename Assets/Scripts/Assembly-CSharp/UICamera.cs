@@ -810,7 +810,7 @@ public class UICamera : MonoBehaviour
 	{
 		int_1 = Screen.width;
 		int_2 = Screen.height;
-		if (Application.platform != RuntimePlatform.Android && Application.platform != RuntimePlatform.IPhonePlayer && Application.platform != RuntimePlatform.WP8Player && Application.platform != RuntimePlatform.BB10Player)
+		if (Application.platform != RuntimePlatform.Android && Application.platform != RuntimePlatform.IPhonePlayer && Application.platform != RuntimePlatform.WP8Player)
 		{
 			if (Application.platform == RuntimePlatform.PS3 || Application.platform == RuntimePlatform.XBOX360)
 			{

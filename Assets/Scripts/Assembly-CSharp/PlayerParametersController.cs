@@ -51,7 +51,6 @@ public class PlayerParametersController : MonoBehaviour
 		}
 		private set
 		{
-			Debug.LogError(value);
 			obscuredFloat_1 = value;
 		}
 	}

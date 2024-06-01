@@ -20,8 +20,13 @@ public sealed class UserData
 	[ProtoMember(4)]
 	public Dictionary<SkillId, SkillData> dictionary_2 = new Dictionary<SkillId, SkillData>();
 
+	//USER CATEGORIES
 	[ProtoMember(5)]
-	public Dictionary<SlotType, int> dictionary_3 = new Dictionary<SlotType, int>();
+	public Dictionary<SlotType, int> dictionary_3 = new Dictionary<SlotType, int>()
+	{
+		{SlotType.SLOT_WEAPON_PRIMARY, 1},
+		{SlotType.SLOT_WEAPON_BACKUP, 100}
+	};
 
 	[ProtoMember(6)]
 	public Dictionary<string, UserTextureSkinData> dictionary_4 = new Dictionary<string, UserTextureSkinData>();

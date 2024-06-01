@@ -9,9 +9,11 @@ public class KillTypeData
 	[CompilerGenerated]
 	private int int_0;
 
+	//localization key
 	[CompilerGenerated]
 	private string string_0;
 
+	//sprite
 	[CompilerGenerated]
 	private string string_1;
 

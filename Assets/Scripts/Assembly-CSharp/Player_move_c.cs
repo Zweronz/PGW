@@ -1303,7 +1303,7 @@ public sealed class Player_move_c : MonoBehaviour
 	private void Awake()
 	{
 		Boolean_9 = Defs.bool_0;
-		Boolean_4 = Defs.bool_2;
+		Boolean_4 = true;//Defs.bool_2;
 		Boolean_6 = Defs.bool_5;
 		Boolean_8 = Defs.bool_4;
 		Boolean_7 = Defs.bool_6;
@@ -2366,6 +2366,7 @@ public sealed class Player_move_c : MonoBehaviour
 
 	public void ShotPressed()
 	{
+		Debug.LogError(WeaponManager_0.WeaponSounds_0 == null);
 		bool flag;
 		if (Single_0 > 10f || (Boolean_4 && !PhotonView_0.Boolean_1) || (!(flag = !PlayerMechController_0.Boolean_1) && WeaponManager_0.WeaponSounds_0 == null))
 		{

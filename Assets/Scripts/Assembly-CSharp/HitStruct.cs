@@ -184,7 +184,7 @@ public sealed class HitStruct
 		hitStruct.bool_0 = bool_18;
 		hitStruct.bool_1 = bool_19;
 		hitStruct.slotType_0 = weaponData_0.SlotType_0;
-		hitStruct.deadType_0 = ((weaponData_0.KillTypeData_0 != null) ? weaponData_0.KillTypeData_0.DeadType_0 : DeadType.ANGEL);
+		hitStruct.deadType_0 = DeadType.ANGEL;//((weaponData_0.KillTypeData_0 != null) ? weaponData_0.KillTypeData_0.DeadType_0 : DeadType.ANGEL);
 		hitStruct.float_0 = weaponData_0.Single_4;
 		hitStruct.float_1 = UserController.UserController_0.GetFloatSummModifier(SkillId.SKILL_WEAPON_DAMAGE_MODIFIER);
 		hitStruct.float_2 = UserController.UserController_0.GetFloatSummModifier(SkillId.SKILL_HEADSHOT_DAMAG_MODIFIER);

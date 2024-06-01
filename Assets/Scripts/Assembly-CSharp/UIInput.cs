@@ -184,10 +184,10 @@ public class UIInput : MonoBehaviour
 				Init();
 			}
 			int_0 = 0;
-			if (Application.platform == RuntimePlatform.BB10Player)
-			{
-				value = value.Replace("\\b", "\b");
-			}
+			//if (Application.platform == RuntimePlatform.BB10Player)
+			//{
+			//	value = value.Replace("\\b", "\b");
+			//}
 			value = Validate(value);
 			if (!(string_0 != value))
 			{

@@ -287,7 +287,7 @@ public sealed class FightController : MonoSingleton<FightController>
 		FightRoomsController_0 = new FightRoomsController();
 		FightTimeController_0 = new FightTimeController();
 		FightMatchMakingController_0 = new FightMatchMakingController();
-		Disconnect();
+		//Disconnect();
 		PhotonPeer.RegisterType(typeof(DamageRPCData), 68, DamageRPCData.SerializePhoton, DamageRPCData.DeserializePhoton);
 		PhotonPeer.RegisterType(typeof(UserScoreAndStatRPCData), 83, UserScoreAndStatRPCData.SerializePhoton, UserScoreAndStatRPCData.DeserializePhoton);
 	}
@@ -326,6 +326,7 @@ public sealed class FightController : MonoSingleton<FightController>
 
 	public void Disconnect(bool bool_3 = false)
 	{
+		Debug.LogError("??");
 		if (!bool_3)
 		{
 			ConnectionStatus_0 = ConnectionStatus.ConnectClosed;
@@ -460,6 +461,7 @@ public sealed class FightController : MonoSingleton<FightController>
 
 	public void LeaveRoom(bool bool_3 = false)
 	{
+		Debug.LogError("why though");
 		bool_2 = bool_3;
 		Log.AddLine(string.Format("[FightController::LeaveRoom]"));
 		PhotonNetwork.Boolean_8 = true;
