@@ -5,54 +5,67 @@ public class BulletStackController : MonoBehaviour
 {
 	public static BulletStackController bulletStackController_0;
 
-	private Dictionary<BulletType, List<GameObject>> dictionary_0 = new Dictionary<BulletType, List<GameObject>>();
+	private static Dictionary<BulletType, List<GameObject>> cachedBullets = new Dictionary<BulletType, List<GameObject>>();
 
-	private Dictionary<BulletType, int> dictionary_1 = new Dictionary<BulletType, int>();
+	private static Dictionary<BulletType, int> bulletIndex = new Dictionary<BulletType, int>();
 
-	private void Start()
+	public const int MAX_BULLETS = 16;
+
+	private void Awake()
 	{
 		bulletStackController_0 = this;
-		base.transform.position = Vector3.zero;
-		for (int i = 0; i < base.transform.childCount; i++)
+	}
+
+	private static Dictionary<BulletType, string> bulletPaths
+	{
+		get
 		{
-			Transform child = base.transform.GetChild(i);
-			for (int j = 0; j < child.childCount; j++)
+			return new Dictionary<BulletType, string>
 			{
-				Transform child2 = child.GetChild(j);
-				Bullet component = child2.GetComponent<Bullet>();
-				if (!(component == null))
-				{
-					if (!dictionary_0.ContainsKey(component.type))
-					{
-						dictionary_0.Add(component.type, new List<GameObject>());
-					}
-					dictionary_0[component.type].Add(component.gameObject);
-				}
-			}
+				{BulletType.COMMON, "BulletsCommon/BulletCommon"},
+				{BulletType.BLASTER, "BulletsBlaster/BulletBlaster"},
+				{BulletType.ICICLE, "BulletIcicle/BulletIcicle"},
+				{BulletType.BLASTER_RED, "BulletsBlasterRed/BulletBlaster"},
+				{BulletType.BLASTER_BLUE, "BulletsBlasterBlue/BulletBlaster"},
+				{BulletType.BLASTER_AOE, "BulletsBlasterRedAoe/BulletBlaster"},
+				{BulletType.BOW_ARROW, "BulletsChinaBow/BulletCommon"},
+				{BulletType.SHURIKEN, "BulletsSuriken/BulletCommon"},
+				{BulletType.HOOK, "BulletsHook/BulletHook"},
+				{BulletType.POISON_PLUSH, "PoisonPlush/BulletPlush"},
+				{BulletType.GREEN_ARROW, "BulletsKryptoniteBlaster/BulletCommon"}
+			};
 		}
-		foreach (KeyValuePair<BulletType, List<GameObject>> item in dictionary_0)
-		{
-			dictionary_1.Add(item.Key, 0);
-		}
+	}
+
+	private static string GetPath(BulletType type)
+	{
+		return "caching/bullets/" + bulletPaths[type];
 	}
 
 	public GameObject GetCurrentBullet(BulletType bulletType_0)
 	{
-		if (!dictionary_0.ContainsKey(bulletType_0))
+		if (cachedBullets.ContainsKey(bulletType_0))
 		{
-			return null;
+			if (bulletIndex[bulletType_0] >= MAX_BULLETS)
+			{
+				bulletIndex[bulletType_0] = 0;
+			}
+			
+			return cachedBullets[bulletType_0][bulletIndex[bulletType_0]++];
 		}
-		Dictionary<BulletType, int> dictionary;
-		Dictionary<BulletType, int> dictionary2 = (dictionary = dictionary_1);
-		BulletType key;
-		BulletType key2 = (key = bulletType_0);
-		int num = dictionary[key];
-		dictionary2[key2] = num + 1;
-		if (dictionary_1[bulletType_0] >= dictionary_0[bulletType_0].Count)
+
+		List<GameObject> stack = new List<GameObject>();
+		GameObject bullet = Resources.Load<GameObject>(GetPath(bulletType_0));
+
+		for (int i = 0; i < MAX_BULLETS; i++)
 		{
-			dictionary_1[bulletType_0] = 0;
+			stack.Add(Instantiate(bullet, transform));
 		}
-		return dictionary_0[bulletType_0][dictionary_1[bulletType_0]];
+
+		cachedBullets.Add(bulletType_0, stack);
+		bulletIndex.Add(bulletType_0, 0);
+
+		return stack[bulletIndex[bulletType_0]++];
 	}
 
 	private void OnDestroy()

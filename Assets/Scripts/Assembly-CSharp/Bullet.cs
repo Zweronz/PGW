@@ -16,7 +16,13 @@ public class Bullet : MonoBehaviour
 
 	protected float float_0 = 0.5f;
 
-	protected Transform transform_0;
+	protected Transform transform_0
+	{
+		get
+		{
+			return myTracer.transform;
+		}
+	}
 
 	protected Vector3 vector3_0 = Vector3.zero;
 
@@ -75,7 +81,6 @@ public class Bullet : MonoBehaviour
 
 	private void Start()
 	{
-		transform_0 = myTracer.transform;
 		myTracer.SetActive(false);
 	}
 

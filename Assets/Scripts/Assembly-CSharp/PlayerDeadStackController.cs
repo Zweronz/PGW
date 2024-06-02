@@ -1,44 +1,35 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDeadStackController : MonoBehaviour
 {
 	public static PlayerDeadStackController playerDeadStackController_0;
 
-	public PlayerDeadController[] playerDeads;
+	private List<PlayerDeadController> playerDeads = new List<PlayerDeadController>();
 
-	private int int_0;
+	private int index;
+
+	public const int MAX_PLAYERDEADS = 12;
 
 	private void Start()
 	{
 		playerDeadStackController_0 = this;
-		Transform transform = base.transform;
-		transform.position = Vector3.zero;
-		int childCount = transform.childCount;
-		playerDeads = new PlayerDeadController[childCount];
-		for (int i = 0; i < childCount; i++)
+		GameObject playerDead = Resources.Load<GameObject>("caching/PlayerDead");
+
+		for (int i = 0; i < MAX_PLAYERDEADS; i++)
 		{
-			playerDeads[i] = transform.GetChild(i).GetComponent<PlayerDeadController>();
+			playerDeads.Add(Instantiate(playerDead, transform).GetComponent<PlayerDeadController>());
 		}
 	}
 
 	public PlayerDeadController GetCurrentParticle(bool bool_0)
 	{
-		bool flag = true;
-		do
+		if (index >= MAX_PLAYERDEADS)
 		{
-			int_0++;
-			if (int_0 >= playerDeads.Length)
-			{
-				if (!flag)
-				{
-					return null;
-				}
-				int_0 = 0;
-				flag = false;
-			}
+			index = 0;
 		}
-		while (playerDeads[int_0].isUseMine && !bool_0);
-		return playerDeads[int_0];
+
+		return playerDeads[index++];
 	}
 
 	private void OnDestroy()

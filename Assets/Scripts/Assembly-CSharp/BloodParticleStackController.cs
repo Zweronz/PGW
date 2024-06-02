@@ -5,64 +5,70 @@ public class BloodParticleStackController : MonoBehaviour
 {
 	public static BloodParticleStackController bloodParticleStackController_0;
 
-	private Dictionary<BulletType, List<WallBloodParticle>> dictionary_0 = new Dictionary<BulletType, List<WallBloodParticle>>();
+	private static Dictionary<BulletType, List<WallBloodParticle>> cachedBloodParticles = new Dictionary<BulletType, List<WallBloodParticle>>();
 
-	private Dictionary<BulletType, int> dictionary_1 = new Dictionary<BulletType, int>();
+	private static Dictionary<BulletType, int> bloodParticleIndex = new Dictionary<BulletType, int>();
 
-	private void Start()
+	public const int MAX_BLOODPARTICLE = 24;
+
+	private void Awake()
 	{
 		bloodParticleStackController_0 = this;
-		base.transform.position = Vector3.zero;
-		for (int i = 0; i < base.transform.childCount; i++)
+	}
+
+	private static Dictionary<BulletType, string> bloodParticlePaths
+	{
+		get
 		{
-			Transform child = base.transform.GetChild(i);
-			for (int j = 0; j < child.childCount; j++)
+			return new Dictionary<BulletType, string>
 			{
-				Transform child2 = child.GetChild(j);
-				WallBloodParticle component = child2.GetComponent<WallBloodParticle>();
-				if (!(component == null))
-				{
-					if (!dictionary_0.ContainsKey(component.type))
-					{
-						dictionary_0.Add(component.type, new List<WallBloodParticle>());
-					}
-					dictionary_0[component.type].Add(component);
-				}
-			}
+				{BulletType.COMMON, "BloodCommon/BloodEffectCommon"},
+				{BulletType.BLASTER, "BloodBlaster/BloodEffectBlaster"},
+				{BulletType.ICICLE, "BloodIcicle/WallEffectIcicle"},
+				{BulletType.BLASTER_RED, "BloodBlasterRed/WallEffectBlaster"},
+				{BulletType.BLASTER_BLUE, "BloodBlasterBlue/WallEffectBlaster"},
+				{BulletType.BLASTER_AOE, "BloodBlasterRedAoe/WallEffectBlasterRedAoe"},
+				{BulletType.BOW_ARROW, "BloodChinaBow/WallEffectSuriken"},
+				{BulletType.POISON_PLUSH, "PoisonPlush/WallEffectPluh"},
+				{BulletType.GREEN_ARROW, "BloodKryptoniteBlaster/WallEffectKryptoniteBlaster"}
+			};
 		}
-		foreach (KeyValuePair<BulletType, List<WallBloodParticle>> item in dictionary_0)
+	}
+
+	private static string GetPath(BulletType type)
+	{
+		if (!bloodParticlePaths.ContainsKey(type))
 		{
-			dictionary_1.Add(item.Key, 0);
+			return bloodParticlePaths[type];
 		}
+
+		return "caching/bloodparticle/" + bloodParticlePaths[type];
 	}
 
 	public WallBloodParticle GetCurrentParticle(BulletType bulletType_0, bool bool_0)
 	{
-		if (!dictionary_0.ContainsKey(bulletType_0))
+		if (cachedBloodParticles.ContainsKey(bulletType_0))
 		{
-			return null;
-		}
-		bool flag = true;
-		do
-		{
-			Dictionary<BulletType, int> dictionary;
-			Dictionary<BulletType, int> dictionary2 = (dictionary = dictionary_1);
-			BulletType key;
-			BulletType key2 = (key = bulletType_0);
-			int num = dictionary[key];
-			dictionary2[key2] = num + 1;
-			if (dictionary_1[bulletType_0] >= dictionary_0[bulletType_0].Count)
+			if (bloodParticleIndex[bulletType_0] >= MAX_BLOODPARTICLE)
 			{
-				if (!flag)
-				{
-					return null;
-				}
-				dictionary_1[bulletType_0] = 0;
-				flag = false;
+				bloodParticleIndex[bulletType_0] = 0;
 			}
+			
+			return cachedBloodParticles[bulletType_0][bloodParticleIndex[bulletType_0]++];
 		}
-		while (dictionary_0[bulletType_0][dictionary_1[bulletType_0]].Boolean_0 && !bool_0);
-		return dictionary_0[bulletType_0][dictionary_1[bulletType_0]];
+
+		List<WallBloodParticle> stack = new List<WallBloodParticle>();
+		GameObject bullet = Resources.Load<GameObject>(GetPath(bulletType_0));
+
+		for (int i = 0; i < MAX_BLOODPARTICLE; i++)
+		{
+			stack.Add(Instantiate(bullet, transform).GetComponent<WallBloodParticle>());
+		}
+
+		cachedBloodParticles.Add(bulletType_0, stack);
+		bloodParticleIndex.Add(bulletType_0, 0);
+
+		return stack[bloodParticleIndex[bulletType_0]++];
 	}
 
 	private void OnDestroy()

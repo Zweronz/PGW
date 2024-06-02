@@ -15,7 +15,6 @@ public class HookBullet : Bullet
 
 	private void Start()
 	{
-		transform_0 = myTracer.transform;
 		float_0 = 5f;
 		myTracer.SetActive(false);
 	}

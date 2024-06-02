@@ -5,64 +5,66 @@ public class HoleBulletStackController : MonoBehaviour
 {
 	public static HoleBulletStackController holeBulletStackController_0;
 
-	private Dictionary<BulletType, List<HoleScript>> dictionary_0 = new Dictionary<BulletType, List<HoleScript>>();
+	private static Dictionary<BulletType, List<HoleScript>> cachedHoles = new Dictionary<BulletType, List<HoleScript>>();
 
-	private Dictionary<BulletType, int> dictionary_1 = new Dictionary<BulletType, int>();
+	private static Dictionary<BulletType, int> holeIndex = new Dictionary<BulletType, int>();
 
-	private void Start()
+	public const int MAX_HOLES = 24;
+
+	private static Dictionary<BulletType, string> holePaths
+	{
+		get
+		{
+			return new Dictionary<BulletType, string>
+			{
+				{BulletType.COMMON, "BulletHolesCommon/BulletHoleCommon"},
+				{BulletType.BLASTER, "BulletHolesBlaster/BulletHolesBlaster"},
+				{BulletType.ICICLE, "BulletHolesIcicle/BulletHolesIcicle"},
+				{BulletType.BLASTER_RED, "BulletHolesBlasterRed/BulletHolesBlaster"},
+				{BulletType.BLASTER_BLUE, "BulletHolesBlasterBlue/BulletHolesBlaster"}
+			};
+		}
+	}
+
+	private static string GetPath(BulletType type)
+	{
+		if (!holePaths.ContainsKey(type))
+		{
+			return "caching/holes/" + holePaths[BulletType.COMMON];
+		}
+
+		return "caching/holes/" + holePaths[type];
+	}
+
+	private void Awake()
 	{
 		holeBulletStackController_0 = this;
-		base.transform.position = Vector3.zero;
-		for (int i = 0; i < base.transform.childCount; i++)
-		{
-			Transform child = base.transform.GetChild(i);
-			for (int j = 0; j < child.childCount; j++)
-			{
-				Transform child2 = child.GetChild(j);
-				HoleScript component = child2.GetComponent<HoleScript>();
-				if (!(component == null))
-				{
-					if (!dictionary_0.ContainsKey(component.type))
-					{
-						dictionary_0.Add(component.type, new List<HoleScript>());
-					}
-					dictionary_0[component.type].Add(component);
-				}
-			}
-		}
-		foreach (KeyValuePair<BulletType, List<HoleScript>> item in dictionary_0)
-		{
-			dictionary_1.Add(item.Key, 0);
-		}
 	}
 
 	public HoleScript GetCurrentHole(BulletType bulletType_0, bool bool_0)
 	{
-		if (!dictionary_0.ContainsKey(bulletType_0))
+		if (cachedHoles.ContainsKey(bulletType_0))
 		{
-			return null;
-		}
-		bool flag = true;
-		do
-		{
-			Dictionary<BulletType, int> dictionary;
-			Dictionary<BulletType, int> dictionary2 = (dictionary = dictionary_1);
-			BulletType key;
-			BulletType key2 = (key = bulletType_0);
-			int num = dictionary[key];
-			dictionary2[key2] = num + 1;
-			if (dictionary_1[bulletType_0] >= dictionary_0[bulletType_0].Count)
+			if (holeIndex[bulletType_0] >= MAX_HOLES)
 			{
-				if (!flag)
-				{
-					return null;
-				}
-				dictionary_1[bulletType_0] = 0;
-				flag = false;
+				holeIndex[bulletType_0] = 0;
 			}
+			
+			return cachedHoles[bulletType_0][holeIndex[bulletType_0]++];
 		}
-		while (dictionary_0[bulletType_0][dictionary_1[bulletType_0]].Boolean_0 && !bool_0);
-		return dictionary_0[bulletType_0][dictionary_1[bulletType_0]];
+
+		List<HoleScript> stack = new List<HoleScript>();
+		GameObject hole = Resources.Load<GameObject>(GetPath(bulletType_0));
+
+		for (int i = 0; i < MAX_HOLES; i++)
+		{
+			stack.Add(Instantiate(hole, transform).GetComponent<HoleScript>());
+		}
+
+		cachedHoles.Add(bulletType_0, stack);
+		holeIndex.Add(bulletType_0, 0);
+
+		return stack[holeIndex[bulletType_0]++];
 	}
 
 	private void OnDestroy()

@@ -1,44 +1,35 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HitStackController : MonoBehaviour
 {
 	public static HitStackController hitStackController_0;
 
-	public HitParticle[] particles;
+	private List<HitParticle> particles = new List<HitParticle>();
 
-	private int int_0;
+	private int index;
+
+	public const int MAX_HITS = 24;
 
 	private void Start()
 	{
 		hitStackController_0 = this;
-		Transform transform = base.transform;
-		transform.position = Vector3.zero;
-		int childCount = transform.childCount;
-		particles = new HitParticle[childCount];
-		for (int i = 0; i < childCount; i++)
+		GameObject headshot = Resources.Load<GameObject>("caching/Hit_particle");
+
+		for (int i = 0; i < MAX_HITS; i++)
 		{
-			particles[i] = transform.GetChild(i).GetComponent<HitParticle>();
+			particles.Add(Instantiate(headshot, transform).GetComponent<HitParticle>());
 		}
 	}
 
 	public HitParticle GetCurrentParticle(bool bool_0)
 	{
-		bool flag = true;
-		do
+		if (index >= MAX_HITS)
 		{
-			int_0++;
-			if (int_0 >= particles.Length)
-			{
-				if (!flag)
-				{
-					return null;
-				}
-				int_0 = 0;
-				flag = false;
-			}
+			index = 0;
 		}
-		while (particles[int_0].isUseMine && !bool_0);
-		return particles[int_0];
+
+		return particles[index++];
 	}
 
 	private void OnDestroy()
