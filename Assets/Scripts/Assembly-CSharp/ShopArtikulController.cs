@@ -66,7 +66,7 @@ public sealed class ShopArtikulController
 
 	public List<ShopArtikulData> GetShopArtikulsByArtikulId(int int_0)
 	{
-		return ShopArtikulStorage.Get.Storage.Search(0, int_0);
+		return shopArtikuls.FindAll(x => x.Int32_0 == int_0);
 	}
 
 	public List<ShopArtikulData> GetShopArtikulsBySlot(SlotType slotType_0)
