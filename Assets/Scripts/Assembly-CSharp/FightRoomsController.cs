@@ -300,7 +300,7 @@ public class FightRoomsController : BaseEvent
 		foreach (KeyValuePair<int, int> item in dictionary_1)
 		{
 			int key3 = item.Key;
-			ModeData objectByKey = ModeStorage.Get.Storage.GetObjectByKey(key3);
+			ModeData objectByKey = modeData.Find(x => x.Int32_0 == key3);
 			if (objectByKey != null)
 			{
 				if (dictionary3.ContainsKey(objectByKey.ModeType_0))
@@ -322,7 +322,7 @@ public class FightRoomsController : BaseEvent
 		{
 			int key5 = item2.Key;
 			int value = item2.Value;
-			ModeData objectByKey2 = ModeStorage.Get.Storage.GetObjectByKey(key5);
+			ModeData objectByKey2 = modeData.Find(x => x.Int32_0 == key5);
 			if (objectByKey2 != null)
 			{
 				int value2 = 0;
