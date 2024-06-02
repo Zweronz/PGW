@@ -20,5 +20,17 @@ public class MatchMakingSettings
 	[ProtoMember(5)]
 	public bool IsSummPlayersCountForMapMode;
 
+	static MatchMakingSettings()
+	{
+		Get = new MatchMakingSettings
+		{
+			CountTryJointRandomRoom = 1,
+			PlayerLimitInClanBattle = 1,
+			ShowRankBattleInMapList = true,
+			TimeBlockToEnterBattle = 1,
+			IsSummPlayersCountForMapMode = true
+		};
+	}
+
 	public static MatchMakingSettings Get { get; private set; }
 }

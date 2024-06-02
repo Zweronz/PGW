@@ -247,7 +247,6 @@ public static class Defs
 	{
 		get
 		{
-			Debug.LogError("uh, hi?");
 			return "Main_Menu_Scene";
 		}
 	}

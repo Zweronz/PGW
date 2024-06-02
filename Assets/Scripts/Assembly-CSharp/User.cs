@@ -27,7 +27,17 @@ public sealed class User
 	public int int_2;
 
 	[ProtoMember(8)]
-	public Dictionary<MoneyType, int> dictionary_0;
+	public Dictionary<MoneyType, int> dictionary_0
+	{
+		get
+		{
+			return new Dictionary<MoneyType, int>
+			{
+				{MoneyType.MONEY_TYPE_COINS, PlayerPrefs.GetInt("Player_Coins")},
+				{MoneyType.MONEY_TYPE_GEMS, PlayerPrefs.GetInt("Player_Gems")}, //ik they're unused but just incase
+			};
+		}
+	}
 
 	[ProtoMember(9)]
 	public int int_3;
