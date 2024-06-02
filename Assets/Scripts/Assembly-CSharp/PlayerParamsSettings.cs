@@ -48,9 +48,9 @@ public class PlayerParamsSettings
 			PlayerForwardSpeed = 1f,
 			PlayerBackwardSpeed = 1f,
 			PlayerSideStepSpeed = 1f,
-			PlayerJumpSpeed = 1f,
-			ForwardAcc = 1f,
-			BackwardAcc = 1f,
+			PlayerJumpSpeed = 7f,
+			ForwardAcc = 0f,
+			BackwardAcc = 0f,
 			PlayerFOV = 75,
 			GunFOV = 75,
 		};

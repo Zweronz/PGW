@@ -325,6 +325,18 @@ public sealed class UserController
 		SkillData userSkill = GetUserSkill(skillId_0);
 		if (userSkill == null)
 		{
+			if (skillId_0 == SkillId.SKILL_SPEED_MODIFIER)
+			{
+				return 7f;
+			}
+			if (skillId_0 == SkillId.SKILL_JUMP_MODIFIER)
+			{
+				return 1f;
+			}
+			if (skillId_0 == SkillId.SKILL_RELOAD_WEAPON_TIME_MODIFIER)
+			{
+				return -2f;
+			}
 			return 0f;
 		}
 		return userSkill.Single_0;
