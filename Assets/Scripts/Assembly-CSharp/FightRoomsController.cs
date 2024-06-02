@@ -32,6 +32,29 @@ public class FightRoomsController : BaseEvent
 		}
 	}
 
+	private List<ModeData> modeData
+	{
+		get
+		{
+			if (_modeData == null)
+			{
+				List<ModeData> data = new List<ModeData>();
+				Modes modes = Resources.Load<Modes>("Modes");
+
+				foreach (Modes.Mode mode in modes.modes)
+				{
+					data.Add(mode.ToModeData());
+				}
+
+				_modeData = data;
+			}
+
+			return _modeData;
+		}
+	}
+
+	private List<ModeData> _modeData;
+
 	public bool GetRoomFromList(string string_0, out ModeData modeData_0)
 	{
 		modeData_0 = null;
@@ -49,7 +72,7 @@ public class FightRoomsController : BaseEvent
 			}
 			return false;
 		}
-		modeData_0 = ModeStorage.Get.Storage.GetObjectByKey((int)RoomInfo_0[num].Hashtable_0["Mode"]);
+		modeData_0 = modeData.Find(x => x.Int32_0 == (int)RoomInfo_0[num].Hashtable_0["Mode"]);//ModeStorage.Get.Storage.GetObjectByKey((int)RoomInfo_0[num].Hashtable_0["Mode"]);
 		return true;
 	}
 
