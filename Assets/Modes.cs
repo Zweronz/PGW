@@ -23,6 +23,8 @@ public class Modes : ScriptableObject
 				Dictionary_0 = new Dictionary<int, ModeRewardData>(),
 				List_0 = new List<MapBonusPoint>(),
 
+				ModeType_0 = modeType,
+
 				Int32_0 = mapId,
 				Int32_1 = mapId,
 

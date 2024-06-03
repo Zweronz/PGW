@@ -313,7 +313,7 @@ namespace pixelgun.tutorial
 				return;
 			}
 			String_0 = objectByKey.String_1;
-			List<WaveMonstersData> list = WaveMonstersStorage.Get.Storage.Search(0, modeData.Int32_0);
+			List<WaveMonstersData> list = null;//WaveMonstersStorage.Get.Storage.Search(0, modeData.Int32_0);
 			if (list == null || list.Count == 0)
 			{
 				return;
