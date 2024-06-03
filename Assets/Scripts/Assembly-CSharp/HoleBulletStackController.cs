@@ -58,7 +58,9 @@ public class HoleBulletStackController : MonoBehaviour
 
 		for (int i = 0; i < MAX_HOLES; i++)
 		{
-			stack.Add(Instantiate(hole, transform).GetComponent<HoleScript>());
+			GameObject stackObject = Instantiate(hole, transform);
+			stackObject.SendMessage("Init");
+			stack.Add(stackObject.GetComponent<HoleScript>());
 		}
 
 		cachedHoles.Add(bulletType_0, stack);

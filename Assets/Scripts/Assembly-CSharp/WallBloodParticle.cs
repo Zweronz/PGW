@@ -37,7 +37,7 @@ public class WallBloodParticle : MonoBehaviour
 		Boolean_0 = false;
 	}
 
-	private void Start()
+	public void Init()
 	{
 		if (!(myObject == null))
 		{

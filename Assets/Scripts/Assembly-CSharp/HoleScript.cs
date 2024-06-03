@@ -33,7 +33,7 @@ public sealed class HoleScript : MonoBehaviour
 		Boolean_0 = false;
 	}
 
-	private void Start()
+	public void Init()
 	{
 		transform_0 = base.transform;
 		transform_0.position = new Vector3(-10000f, -10000f, -10000f);

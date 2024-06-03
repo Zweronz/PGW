@@ -62,7 +62,9 @@ public class BloodParticleStackController : MonoBehaviour
 
 		for (int i = 0; i < MAX_BLOODPARTICLE; i++)
 		{
-			stack.Add(Instantiate(bullet, transform).GetComponent<WallBloodParticle>());
+			GameObject stackObject = Instantiate(bullet, transform);
+			stackObject.SendMessage("Init");
+			stack.Add(stackObject.GetComponent<WallBloodParticle>());
 		}
 
 		cachedBloodParticles.Add(bulletType_0, stack);
