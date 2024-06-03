@@ -98,52 +98,57 @@ namespace engine.operations
 
 		public override void Update()
 		{
-			if (!bool_6)
+			try
 			{
-				if (float_0 != 0f)
+				if (!bool_6)
 				{
-					base.ProgressEvent_0.Dispatch(float_0);
+					if (float_0 != 0f)
+					{
+						base.ProgressEvent_0.Dispatch(float_0);
+					}
+					return;
 				}
-				return;
-			}
-			DependSceneEvent<MainUpdate>.GlobalUnsubscribe(Update);
-			if (CheckError())
-			{
-				base.BaseAssetFile_0.IsLoaded = false;
-				Error();
-				return;
-			}
-			base.BaseAssetFile_0.IsLoaded = true;
-			if (base.BaseAssetFile_0 is AssetBundleFile)
-			{
-				base.BaseAssetFile_0.IsLoaded = false;
-				Log.AddLine(string.Format("URL:{0}. Message: {1}", httprequest_0.Uri_0, "Loading AssetBundle error, not implemented for this operation!"), Log.LogLevel.ERROR);
-				Error();
-				return;
-			}
-			if (base.BaseAssetFile_0 is TextureAssetFile)
-			{
-				TextureAssetFile textureAssetFile = (TextureAssetFile)base.BaseAssetFile_0;
-				textureAssetFile.Texture = httpresponse_0.Texture2D_0;
-				textureAssetFile.Bytes = httpresponse_0.Byte_0;
-			}
-			else
-			{
-				base.BaseAssetFile_0.Bytes = httpresponse_0.Byte_0;
-				try
-				{
-					base.BaseAssetFile_0.Convert();
-				}
-				catch (Exception ex)
+				DependSceneEvent<MainUpdate>.GlobalUnsubscribe(Update);
+				if (CheckError())
 				{
 					base.BaseAssetFile_0.IsLoaded = false;
-					Log.AddLine(string.Format("URL:{0}. Exeption message: {1}", httprequest_0.Uri_0, ex.Message + " : " + ex.StackTrace), Log.LogLevel.ERROR);
-					MonoSingleton<Log>.Prop_0.DumpError(ex);
 					Error();
 					return;
 				}
+				base.BaseAssetFile_0.IsLoaded = true;
+				if (base.BaseAssetFile_0 is AssetBundleFile)
+				{
+					base.BaseAssetFile_0.IsLoaded = false;
+					Log.AddLine(string.Format("URL:{0}. Message: {1}", httprequest_0.Uri_0, "Loading AssetBundle error, not implemented for this operation!"), Log.LogLevel.ERROR);
+					Error();
+					return;
+				}
+				if (base.BaseAssetFile_0 is TextureAssetFile)
+				{
+					TextureAssetFile textureAssetFile = (TextureAssetFile)base.BaseAssetFile_0;
+					textureAssetFile.Texture = httpresponse_0.Texture2D_0;
+					textureAssetFile.Bytes = httpresponse_0.Byte_0;
+				}
+				else
+				{
+					base.BaseAssetFile_0.Bytes = httpresponse_0.Byte_0;
+					try
+					{
+						base.BaseAssetFile_0.Convert();
+					}
+					catch (Exception ex)
+					{
+						base.BaseAssetFile_0.IsLoaded = false;
+						Log.AddLine(string.Format("URL:{0}. Exeption message: {1}", httprequest_0.Uri_0, ex.Message + " : " + ex.StackTrace), Log.LogLevel.ERROR);
+						MonoSingleton<Log>.Prop_0.DumpError(ex);
+						Error();
+						return;
+					}
+				}
+				Complete();
 			}
-			Complete();
+			catch (Exception e)
+			{}
 		}
 
 		private void Destroy()

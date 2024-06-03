@@ -26,7 +26,7 @@ public sealed class UserData
 	public Dictionary<SlotType, int> dictionary_3 = new Dictionary<SlotType, int>()
 	{
 		{SlotType.SLOT_WEAPON_PRIMARY, 1},
-		{SlotType.SLOT_WEAPON_BACKUP, 100}
+		{SlotType.SLOT_WEAPON_BACKUP, 0}
 	};
 
 	[ProtoMember(6)]
