@@ -432,7 +432,8 @@ public static class Defs
 
 	public static string GetPlayerNameOrDefault()
 	{
-		string string_ = String_10;
+		return PlayerPrefs.GetString("NamePlayer", "Player");
+		/*string string_ = String_10;
 		if (UsersData.UsersData_0 != null)
 		{
 			if (UsersData.UsersData_0.UserData_0 != null)
@@ -462,6 +463,6 @@ public static class Defs
 		{
 			Log.AddLine("ERROR UsersData.Get == null", Log.LogLevel.WARNING);
 		}
-		return string_;
+		return string_;*/
 	}
 }
