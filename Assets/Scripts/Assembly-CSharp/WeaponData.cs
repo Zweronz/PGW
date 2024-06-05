@@ -566,7 +566,9 @@ public sealed class WeaponData
 	{
 		get
 		{
-			SkillData skill = ArtikulController.ArtikulController_0.GetSkill(Int32_0, SkillId.SKILL_WEAPON_RANGE);
+			SkillData fakeSkill = new SkillData();
+			fakeSkill.Single_1 = Weapons.GetWeaponFromID(Int32_0).range;
+			SkillData skill = fakeSkill;/*ArtikulController.ArtikulController_0.GetSkill(Int32_0, SkillId.SKILL_WEAPON_RANGE)*/;
 			return (skill != null) ? skill.Single_1 : 3f;
 		}
 	}

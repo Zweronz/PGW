@@ -22,6 +22,7 @@ public class Weapons : ScriptableObject
 
 		public float rocketExplodeDelay;
 		public int bulletCount = 1;
+		public float range = 300f;
 
 		public WeaponData ToWeaponData()
 		{
