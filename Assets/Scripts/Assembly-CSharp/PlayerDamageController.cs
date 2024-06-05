@@ -463,6 +463,9 @@ public class PlayerDamageController
 		}
 		float x = (float)Screen.width * 0.5f + vector2.x - vector.x * Defs.Single_1 + (float)UnityEngine.Random.Range(0, Mathf.RoundToInt(vector.x * Defs.Single_0));
 		float y = (float)Screen.height * 0.5f + vector2.y - vector.y * Defs.Single_1 + (float)UnityEngine.Random.Range(0, Mathf.RoundToInt(vector.y * Defs.Single_0));
+		//float x = (float)Screen.width * 0.5f + vector2.x - vector.x + (float)UnityEngine.Random.Range(0, Mathf.RoundToInt(vector.x*46));
+		//float y = (float)Screen.height * 0.5f + vector2.y - vector.y + (float)UnityEngine.Random.Range(0, Mathf.RoundToInt(vector.y*46));
+		Debug.Log(new Vector3(x, y, 0f));
 		return Camera.main.ScreenPointToRay(new Vector3(x, y, 0f));
 	}
 

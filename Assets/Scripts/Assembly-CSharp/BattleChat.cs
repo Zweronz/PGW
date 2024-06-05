@@ -101,6 +101,7 @@ public class BattleChat : MonoBehaviour
 
 	public void Send(string string_2)
 	{
+		print("sending " + string_2);
 		string empty = string.Empty;
 		if (string_2.Contains("/tell"))
 		{

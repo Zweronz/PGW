@@ -44,8 +44,9 @@ public sealed class LocalizationStorage : BaseStorage<string, LocalizationData>
 
 	public string Term(string key)
 	{
-		string[] split = key.Split('.');
-		return split[split.Length - 1].Replace("_", " ");
+		return Localizer.Get(key);
+		/*string[] split = key.Split('.');
+		return split[split.Length - 1].Replace("_", " ");*/
 		if (base.Storage != null)
 		{
 			LocalizationData objectByKey = base.Storage.GetObjectByKey(key);

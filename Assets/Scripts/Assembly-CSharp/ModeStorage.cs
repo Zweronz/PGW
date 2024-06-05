@@ -16,6 +16,7 @@ public sealed class ModeStorage : BaseStorage<int, ModeData>
 			if (_instance == null)
 			{
 				_instance = new ModeStorage();
+				//_instance.Storage = new StorageData<int, ModeData>();
 			}
 			return _instance;
 		}

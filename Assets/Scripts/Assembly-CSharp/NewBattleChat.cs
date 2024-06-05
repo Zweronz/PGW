@@ -227,6 +227,7 @@ public class NewBattleChat : MonoBehaviour
 			return;
 		}
 		string string_ = input.String_2;
+		print("real sending " + string_);
 		if (string_.Contains("/tell"))
 		{
 			string[] array = input.String_2.Split(' ');
@@ -247,8 +248,16 @@ public class NewBattleChat : MonoBehaviour
 		string text = string_.Substring((length <= length2) ? length : 0, (length <= length2) ? (length2 - length) : 0).Trim();
 		if (!text.Equals(string.Empty))
 		{
+			ChatMessageData myChatMessageData = new ChatMessageData();
+			myChatMessageData.string_1 = text;
+			myChatMessageData.string_2 = Defs.GetPlayerNameOrDefault();
+			myChatMessageData.string_3 = Defs.GetPlayerNameOrDefault();
+			ChatController.ChatController_0.AddMessage(myChatMessageData);
+			WeaponManager.weaponManager_0.myPlayerMoveC.PhotonView_0.RPC("SendChatRPC", PhotonTargets.All, Defs.GetPlayerNameOrDefault(), text);
+			input.String_2 = input.String_0;
+			/*print("is chat controller null? " + System.Convert.ToString(ChatController.ChatController_0 == null));
 			bool flag = ChatController.ChatController_0.SendMessage(string_0 + text, 3);
-			input.String_2 = (bool_0 ? string_0 : ((!flag) ? string_ : input.String_0));
+			input.String_2 = (bool_0 ? string_0 : ((!flag) ? string_ : input.String_0));*/
 		}
 	}
 

@@ -2232,6 +2232,16 @@ public sealed class Player_move_c : MonoBehaviour
 	}
 
 	[RPC]
+	public void SendChatRPC(string name, string text)
+	{
+		ChatMessageData myChatMessageData = new ChatMessageData();
+		myChatMessageData.string_1 = text;
+		myChatMessageData.string_2 = name;
+		myChatMessageData.string_3 = Defs.GetPlayerNameOrDefault();
+		ChatController.ChatController_0.AddMessage(myChatMessageData);
+	}
+
+	[RPC]
 	public void SetAdminFlag(bool bool_34, bool bool_35)
 	{
 		if (!Boolean_5)

@@ -230,6 +230,7 @@ public sealed class HitStruct
 		hitStruct.weaponSounds_0 = weaponSounds_1;
 		hitStruct.vector2_0.x = ((!(weaponSounds_1 == null)) ? weaponSounds_1.Single_0 : 0f);
 		hitStruct.vector2_0.y = ((!(weaponSounds_1 == null)) ? weaponSounds_1.Single_1 : 0f);
+		Debug.Log(hitStruct.vector2_0);
 		if (bool_18)
 		{
 			Player_move_c myPlayerMoveC = WeaponManager.weaponManager_0.myPlayerMoveC;

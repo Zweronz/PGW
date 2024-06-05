@@ -21,6 +21,7 @@ public class Weapons : ScriptableObject
 		public BulletType bulletType;
 
 		public float rocketExplodeDelay;
+		public int bulletCount = 1;
 
 		public WeaponData ToWeaponData()
 		{
@@ -47,6 +48,18 @@ public class Weapons : ScriptableObject
 				Single_6 = rocketExplodeDelay
 			};
 		}
+	}
+
+	public static Weapon GetWeaponFromID(int id)
+	{
+		foreach (Weapon wep in Resources.Load<Weapons>("Weapons").weapons)
+		{
+			if (wep.id == id)
+			{
+				return wep;
+			}
+		}
+		return null;
 	}
 
 	public List<Weapon> weapons;
