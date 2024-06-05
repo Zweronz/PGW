@@ -18,6 +18,9 @@ public sealed class UserController
 			{
 				userController_0 = new UserController();
 			}
+
+			InitLocalData();
+
 			return userController_0;
 		}
 	}
@@ -27,6 +30,20 @@ public sealed class UserController
 		get
 		{
 			return UsersData.UsersData_0.UserData_0;
+		}
+	}
+
+	private static void InitLocalData()
+	{
+		UnityEngine.PlayerPrefs.SetInt("Bought_WeaponID0", 1);
+		UnityEngine.PlayerPrefs.SetInt("Bought_WeaponID1", 1);
+
+		List<Weapons.Weapon> wps = Resources.Load<Weapons>("Weapons").weapons;
+		for (int i = 0; i < wps.Count; i++)
+		{
+			int id = wps[i].id;
+			if (!UserController.userArtikuls.ContainsKey(id))
+				UserController.userArtikuls.Add( id, new UserArtikul{ int_0 = id, int_1 = UnityEngine.PlayerPrefs.GetInt("Bought_WeaponID" + id, 0) } );
 		}
 	}
 
@@ -44,10 +61,8 @@ public sealed class UserController
 		return UserData_0.userArtikulStorage_0.GetObjectByKey(string_0);
 	}
 
-	private static Dictionary<int, UserArtikul> userArtikuls = new Dictionary<int, UserArtikul>
+	public static Dictionary<int, UserArtikul> userArtikuls = new Dictionary<int, UserArtikul>
 	{
-		{1, new UserArtikul { int_0 = 1, int_1 = 1 }},
-		{2, new UserArtikul { int_0 = 100, int_1 = 1 }}
 	};
 
 	public UserArtikul GetUserArtikulByArtikulId(int int_0)

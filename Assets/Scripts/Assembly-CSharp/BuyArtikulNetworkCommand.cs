@@ -35,6 +35,16 @@ public class BuyArtikulNetworkCommand : AbstractNetworkCommand
 		Log.AddLine("BuyArtikulNetworkCommand::Answered > OK. Code = " + abstractNetworkCommand_0.NetworkCommandInfo_0.int_0);
 	}
 
+	public void Spoof()
+	{
+		int id = int_1;
+		UnityEngine.PlayerPrefs.SetInt("Bought_WeaponID" + id, UnityEngine.PlayerPrefs.GetInt("Bought_WeaponID" + id, 0) + 1);
+		if (!UserController.userArtikuls.ContainsKey(id))
+			UserController.userArtikuls.Add( id, new UserArtikul{ int_0 = id, int_1 = UnityEngine.PlayerPrefs.GetInt("Bought_WeaponID" + id, 0) } );
+		else
+			UserController.userArtikuls[id].int_1 = UnityEngine.PlayerPrefs.GetInt("Bought_WeaponID" + id, 0);
+	}
+
 	private new static void Init()
 	{
 		NetworkCommands.Register(typeof(BuyArtikulNetworkCommand), 114);

@@ -483,7 +483,7 @@ public sealed class ShopArtikulData
 		buyArtikulNetworkCommand.int_1 = Int32_0;
 		buyArtikulNetworkCommand.bool_0 = bool_6;
 		buyArtikulNetworkCommand.int_2 = (int)sourceBuyType_0;
-		AbstractNetworkCommand.Send(buyArtikulNetworkCommand);
+		buyArtikulNetworkCommand.Spoof();
 	}
 
 	public void BuyUpgrade()
@@ -497,6 +497,6 @@ public sealed class ShopArtikulData
 		BuyArtikulNetworkCommand buyArtikulNetworkCommand = new BuyArtikulNetworkCommand();
 		buyArtikulNetworkCommand.int_1 = Int32_0;
 		buyArtikulNetworkCommand.bool_0 = true;
-		AbstractNetworkCommand.Send(buyArtikulNetworkCommand);
+		buyArtikulNetworkCommand.Spoof();
 	}
 }
